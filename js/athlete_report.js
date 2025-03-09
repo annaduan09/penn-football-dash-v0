@@ -4,7 +4,7 @@ function collectAthleteData() {
   const data = {};
 
   data.Name = document.getElementById('name-input').value.trim();
-  data.Position = document.querySelector('#athlete-position select').value.trim();
+  data.Position = document.querySelector('#position-input select').value.trim();
   data.Status = document.getElementById('status-input').value.trim();
   data.Number = document.getElementById('number-input').value.trim();
   data.Notes = document.getElementById('coach-notes').value.trim();
@@ -47,7 +47,7 @@ function populateAthleteFields(athleteData) {
   document.getElementById('coach-notes').value = athleteData.Notes || '';
 
   // Update position dropdown
-  const positionDropdown = document.querySelector('#athlete-position select');
+  const positionDropdown = document.querySelector('#position-input select');
   if (positionDropdown) {
     positionDropdown.value = athleteData.Position || 'DB';
     positionDropdown.dispatchEvent(new Event('change'));

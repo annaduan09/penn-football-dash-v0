@@ -145,3 +145,109 @@ body {
 }
   
   .show {display: block;}
+
+  /* Add Athlete Page */
+  #bio {
+    display: flex;
+    column-gap: 1rem;
+  }
+
+  #position-input select,
+  #name-input,
+  #status-input,
+  #number-input {
+    font-size: 2rem;
+    color: black;
+    border: none;
+    background-color: transparent;
+  }
+  
+
+  #athlete-position select:hover,
+  #name-input:hover,
+  #status-input:hover,
+  #number-input:hover {
+    color: #980000;
+  }
+  
+  ul#stats-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-color: transparent;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  fieldset {
+    border-color: transparent;
+  }
+
+  li {
+    display: flex;
+    margin-bottom: 0.5rem;
+    justify-content: space-around;
+  }
+
+
+
+  ul {
+    font-family: Lato, sans-serif;
+    list-style-type: none;
+    padding-left: 0;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+  
+  
+  label {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .benchmark-menu input {
+    font-family: Lato, sans-serif;
+    border-color: transparent;
+    width: 1rem;
+    font-size: 0.9rem;
+    background-color: #f8f8f8;
+    border-radius: 0.35em;
+    font-weight: 200;
+    color: #4d4d57;
+  }
+  
+  #coach-notes {
+    width: 30vw;
+    display: block;
+    text-align: left;
+    padding: 0.5rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow-y: auto;
+    resize: vertical;
+    border-color: rgba(160, 159, 159, 0.3);
+    border-width: 1px;
+    color: gray;
+    border-radius: 0.35em;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 40%;
+  }
+  
+  input[type="number"] {
+    width: 40%;
+    appearance: textfield;
+    text-align: center;
+  }
+  
+  .unit {
+    font-family: Lato, sans-serif;
+    pointer-events: none;
+    align-content: center;
+    opacity: 0.5;
+    padding-left: 0.25rem;
+    color: #a2a2a2;
+  }
