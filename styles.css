@@ -1,3 +1,4 @@
+/* Big components */
 * {
     margin: 0;
     padding: 0;
@@ -25,17 +26,11 @@ body {
     padding: 1vw;
     grid-area: header;
     display: flex;
-    column-gap: 5vw;
-    color: #1f1f1f;
 }
 
 .header > img {
     height: 5vh;
-}
-
-.header > h1 {
-    font-weight: lighter;
-    font-size: 2rem;
+    padding-right: 2vw;
 }
 
 .navbar {
@@ -44,7 +39,7 @@ body {
 
 .navbar .tablink {
     grid-area: navbar;
-    color: rgb(165, 165, 165);
+    color: white;
     background-color: #1f1f1f;
     float: left;
     border: none;
@@ -55,7 +50,7 @@ body {
 }
 
 .navbar .tablink:hover {
-    background-color: #a01414;
+    background-color: black;
 }
 
 .tabcontent {
@@ -66,18 +61,87 @@ body {
     height: 100%;
 }
 
-.main {
+/* Chart page */
+#main {
     grid-area: main;
+}
+
+.name-banner {
+    display: flex;
+    column-gap: 3vw;
+}
+
+.name-banner > h1 {
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+.chart-area {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1vw;
     text-align: center;
 }
 
-.main > div {
+.chart-area > div {
     background-color: rgb(249, 252, 255);
     padding: 1vw;
     font-size: 30;
     height: 35vh;
     border-radius: 1vw;
 }
+
+/* Test dropdown */
+.dropbtn {
+    background-color: #a01414;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #7b0f0f;
+  }
+  
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 1rem;
+    padding: 1vw 1vw 1vw 1vw;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 0.5rem solid #ddd;}
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 15vw;
+    max-height: 30vh;
+    border: 1px solid #ddd;
+    z-index: 1;
+    overflow-y: auto;
+  }
+  
+  .dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown li:hover {
+    background-color: #ddd;
+}
+  
+  .show {display: block;}

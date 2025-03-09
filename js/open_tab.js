@@ -13,10 +13,10 @@ function openTab(tabName, tabEl) {
 
     document.getElementById(tabName).style.display = "block";
 
-    tabEl.style.backgroundColor = "white";
+    tabEl.style.backgroundColor = "#a01414";
 }
 
-window.openPage = openPage;
+window.openTab = openTab;
 
 
 
