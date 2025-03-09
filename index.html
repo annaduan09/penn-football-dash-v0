@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Penn Football Strength Benchmarking</title>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="header">
+                <img src="www/penn_shield.svg" alt="Penn Logo">
+                <h1>Prince Emili</h1>
+                <h1>DL</h1>
+                <h1>Senior</h1>
+                <h1>78</h1>
+            </div>
+
+            <div class="navbar">
+                <button class="tablink" onclick="openTab('Add', this, 'red')">Add</button>
+                <button class="tablink" onclick="openTab('main', this, 'red')" id="defaultOpen">Saved</button>
+                <button class="tablink" onclick="openTab('Download', this, 'red')">Download</button>
+                <button class="tablink" onclick="openTab('About', this, 'red')">About</button>
+            </div>
+
+            <div class="main" class="tabcontent">
+                <div class="bar">
+                    Strength
+                </div>
+                <div class="bar">
+                    Power
+                </div>
+                <div class="bar">
+                    Speed
+                </div>
+                <div class="bar">
+                    Agility
+                </div>
+                <div class="bar">
+                    Anthro
+                </div>
+                <div class="radar">
+                    Anthro
+                </div>
+            </div>
+
+            <div id="Add" class="tabcontent">
+                <h3>Add Athlete</h3>
+            </div>
+
+            <div id="Download" class="tabcontent">
+                <h3>Download Report</h3>
+            </div>
+
+            <div id="About" class="tabcontent">
+                <h3>Using this tool</h3>
+            </div>
+    </div>
+    <script src="js/open_tab.js"></script>
+    <script src="js/main.js" type="module"></script>
+    </body>
+</html>

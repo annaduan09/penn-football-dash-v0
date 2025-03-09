@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    color: #1f1f1f;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'header header header header header header'
+    'navbar navbar navbar navbar navbar navbar'
+    'main main main main main main';
+}
+
+.grid-container > div {
+    font-size: 30;
+}
+
+.header {
+    padding: 1vw;
+    grid-area: header;
+    display: flex;
+    column-gap: 5vw;
+    color: #1f1f1f;
+}
+
+.header > img {
+    height: 5vh;
+}
+
+.header > h1 {
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+.navbar .tablink {
+    grid-area: navbar;
+    color: rgb(165, 165, 165);
+    background-color: #1f1f1f;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1vw 1vw;
+    width: 25%;
+}
+
+.navbar .tablink:hover {
+    background-color: #a01414;
+}
+
+.tabcontent {
+    grid-area: main;
+    background-color: white;
+    display: none;
+    padding: 1vw 1vw;
+    height: 100%;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vw;
+    text-align: center;
+}
+
+.main > div {
+    background-color: rgb(249, 252, 255);
+    padding: 1vw;
+    font-size: 30;
+    height: 35vh;
+    border-radius: 1vw;
+}
