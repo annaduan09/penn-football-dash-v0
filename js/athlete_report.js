@@ -9,7 +9,7 @@ function collectAthleteData() {
   data.Number = document.getElementById('number-input').value.trim();
   data.Notes = document.getElementById('coach-notes').value.trim();
 
-  document.querySelectorAll('[id^="athlete-stat-"]').forEach((input) => {
+  document.querySelectorAll('[id^="stat-entry-"]').forEach((input) => {
     data[input.name] = input.value ? parseFloat(input.value) : null;
   });
 
@@ -19,7 +19,6 @@ function collectAthleteData() {
 async function loadAthleteDropdown() {
   const athleteList = document.getElementById('athlete-list');
   const dropdown = document.getElementById('myDropdown');
-  //toggleDropdownVisibility(athleteList);
   toggleDropdownVisibility(dropdown);
 
   if (dropdown.classList.contains('visible')) {
@@ -42,6 +41,8 @@ function toggleDropdownVisibility(el) {
 }
 
 function populateAthleteFields(athleteData) {
+  console.log("populate athlete fields");
+
   // Populate demographic fields
   document.getElementById('name-input').value = athleteData.Name || '';
   document.getElementById('number-input').value = athleteData.Number || '';
@@ -56,8 +57,10 @@ function populateAthleteFields(athleteData) {
   }
 
   // Populate stat fields
-  document.querySelectorAll('[id^="athlete-stat-"]').forEach((input) => {
+  document.querySelectorAll('[id^="stat-entry-"]').forEach((input) => {
     const statName = input.name;
+    console.log("stat:" + statName);
+
     if (athleteData[statName] !== undefined) {
       input.value = athleteData[statName] !== null ? athleteData[statName] : '';
       input.dispatchEvent(new Event('input'));
@@ -95,7 +98,7 @@ function setupAthleteSelectionListener() {
     }
   });
 
-  // Populate input fields
+  // On athlete selection..
   athleteList.addEventListener('click', (event) => {
     const target = event.target;
     if (target.classList.contains('athlete-item')) {
