@@ -4,9 +4,11 @@ import { initStatEntry } from './stat_entry.js';
 import { calculateChartData } from './chart_data.js';
 
 import {
-    loadAthleteDropdown,
-    setupAthleteSelectionListener,
-  } from './athlete_report.js';
+  collectAthleteData,
+  loadAthleteDropdown,
+  setupAthleteSelectionListener
+} from './athlete_report.js';
+
 
 // Default/switch tabs
 document.addEventListener("DOMContentLoaded", function () {
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Fetch individual stats data
 const indivStatsResponse = await fetch('data/stats_2020_2024.json');
 const indivStats = await indivStatsResponse.json();
+
 
 
 
@@ -35,15 +38,32 @@ const statNames = Object.keys(Object.values(indivStats)[0][0]);
 initStatEntry(statListEl, positionDropdownEl, statNames, positions, events);
 
 
-// Load athletes
-document.getElementById('load-athletes').addEventListener('click', loadAthleteDropdown);
 
-// Enable athlete selection from dropdown
-setupAthleteSelectionListener();
+// Calculate chart data
+const chartData = calculateChartData(indivStats, events);
+
+const { positionMedians, playerPercentiles, playerStats, playerStatsValues, categoryPercentiles } =
+    chartData.getCalculatedData();
+
+
+
 
 
 // Init chart
 
 let anthro = document.querySelector('#anthropometrics-chart')
 
+let strength = document.querySelector('#strength-chart')
+
+let speed = document.querySelector('#speed-chart')
+
 initChart(anthro)
+initChart(strength)
+initChart(speed)
+
+
+// Load athletes
+document.getElementById('load-athletes').addEventListener('click', loadAthleteDropdown);
+
+// Enable athlete selection from dropdown
+setupAthleteSelectionListener();

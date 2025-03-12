@@ -1,18 +1,22 @@
+// Pick athlete button clicked -> show dropdown
 function showDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
+  console.log("Toggle dropdown");
+  document.getElementById("myDropdown").classList.toggle("visible");
+  //document.getElementById("athlete-list").classList.toggle("visible");
   }
   
+// search by name or postiion
   function filterFunction() {
     const input = document.getElementById("myInput");
     const filter = input.value.toUpperCase();
     const div = document.getElementById("myDropdown");
-    const li = div.getElementsByTagName("li");
-    for (let i = 0; i < li.length; i++) {
-      txtValue = li[i].textContent || a[i].innerText;
+    const ul = div.getElementsByTagName("ul");
+    for (let i = 0; i < ul.length; i++) {
+      txtValue = ul[i].textContent || ul[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
+        ul[i].style.display = "";
       } else {
-        li[i].style.display = "none";
+        ul[i].style.display = "none";
       }
     }
   }

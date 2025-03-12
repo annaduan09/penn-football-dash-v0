@@ -144,7 +144,14 @@ body {
     background-color: #ddd;
 }
   
-  .show {display: block;}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
 
   /* Add Athlete Page */
   #bio {

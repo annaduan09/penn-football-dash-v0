@@ -1,5 +1,6 @@
 
 function calculateChartData(indivStats, events) {
+
   let playerPosition = 'DB';
   const playerStats = [];
   const playerStatsValues = [];
@@ -135,6 +136,7 @@ function calculateChartData(indivStats, events) {
 
   // Return calculated data for bar and radar chart render
   function getCalculatedData() {
+
     return {
       positionMedians,
       playerPercentiles,

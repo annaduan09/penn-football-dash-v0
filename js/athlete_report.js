@@ -17,6 +17,7 @@ function collectAthleteData() {
 }
 
 async function loadAthleteDropdown() {
+  console.log("Toggle list");
   const dropdownMenu = document.getElementById('athlete-list');
   toggleDropdownVisibility(dropdownMenu);
 
@@ -87,6 +88,7 @@ function setupAthleteSelectionListener() {
     const dropdownContainer = document.getElementById('dropdown-container');
 
     if (!dropdownContainer.contains(event.target)) {
+      console.log("clicked somewhere");
       dropdownMenu.classList.add('hidden');
       dropdownMenu.classList.remove('visible');
     }
@@ -94,6 +96,7 @@ function setupAthleteSelectionListener() {
 
   // Populate input fields
   dropdownMenu.addEventListener('click', (event) => {
+    console.log("Clicked name");
     const target = event.target;
     if (target.classList.contains('athlete-item')) {
       const athleteData = JSON.parse(target.dataset.athlete);
