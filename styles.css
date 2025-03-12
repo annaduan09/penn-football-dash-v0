@@ -66,15 +66,21 @@ body {
     grid-area: main;
 }
 
-.name-banner {
+.name-banner, #bio {
     display: flex;
     column-gap: 3vw;
-    justify-content: space-around; 
+    justify-content: left; 
+    margin-bottom: 1rem;
 }
 
 .name-banner > h1 {
     font-weight: lighter;
     font-size: 2rem;
+}
+
+#bio > h1 {
+  font-weight: lighter;
+  font-size: 2rem;
 }
 
 #name-input, #name-display {
@@ -184,51 +190,67 @@ body {
   }
   
   ul#stats-list {
+    width: 60vw;
     column-count: 2; 
-    column-gap: 1rem;  
     border-color: transparent;
+    font-family: Lato, sans-serif;
     list-style-type: none;
-    padding-left: 0;
+    font-weight: 300;
+    font-size: 0.9rem;
   }
   
   fieldset {
     border-color: transparent;
   }
-
+  
   li {
     display: flex;
     margin-bottom: 0.5rem;
-    justify-content: space-between;
-  }
-
-
-  ul {
-    font-family: Lato, sans-serif;
-    list-style-type: none;
-    padding-left: 0;
-    font-weight: 300;
-    font-size: 0.9rem;
+    justify-content: flex-start;
   }
   
-  
+  .stat-category-label {
+    font-weight: bold;
+  }
   label {
-    display: flex;
-    flex-direction: row;
+    width: 10vw;
   }
   
-  .benchmark-menu input {
+  #stats-list input {
     font-family: Lato, sans-serif;
     border-color: transparent;
     width: 1rem;
     font-size: 0.9rem;
     background-color: #f8f8f8;
-    border-radius: 0.35em;
+    border-radius: 0.3rem;
     font-weight: 200;
-    color: #4d4d57;
+    color: black;
+    appearance: textfield;
+    text-align: center;
+    width: 5vw;
   }
   
+  
+  .input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  
+  .unit {
+    font-family: Lato, sans-serif;
+    pointer-events: none;
+    align-content: center;
+    opacity: 0.5;
+    padding-left: 0.25rem;
+    color: #a2a2a2;
+  }
+
   #coach-notes {
     width: 30vw;
+    height: 15vh;
     display: block;
     text-align: left;
     padding: 0.5rem;
@@ -241,28 +263,32 @@ body {
     color: gray;
     border-radius: 0.35em;
   }
-  
-  .input-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 40%;
-  }
-  
-  input[type="number"] {
-    width: 40%;
-    appearance: textfield;
-    text-align: center;
-  }
-  
-  .unit {
-    font-family: Lato, sans-serif;
-    pointer-events: none;
-    align-content: center;
-    opacity: 0.5;
-    padding-left: 0.25rem;
-    color: #a2a2a2;
-  }
+
+#save-athlete,
+#clear-all {
+  padding: 0.5rem 1rem; 
+  font-family: Poppins, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400; 
+  color: white;
+  background-color: #011f5b;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#save-athlete:hover,
+#clear-all:hover {
+  background-color: #023b87; 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#save-athlete:active,
+#clear-all:active {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #001940; 
+}
 
   /* Billboard Charts */
 
