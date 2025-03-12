@@ -43,23 +43,27 @@ function toggleDropdownVisibility(el) {
 function populateAthleteFields(athleteData) {
   console.log("populate athlete fields");
 
-  // Populate demographic fields
-  document.getElementById('name-input').value = athleteData.Name || '';
+  // Populate demographics
+  document.getElementById('name-input').value = athleteData.Name || '';                 // Inputs
   document.getElementById('number-input').value = athleteData.Number || '';
   document.getElementById('status-input').value = athleteData.Status || '';
   document.getElementById('coach-notes').value = athleteData.Notes || '';
+
+  document.getElementById('name-display').textContent = athleteData.Name || '';         // Displays
+  document.getElementById('number-display').textContent = athleteData.Number || '';
+  document.getElementById('status-display').textContent = athleteData.Status || '';
 
   // Update position dropdown
   const positionDropdown = document.querySelector('#position-input select');
   if (positionDropdown) {
     positionDropdown.value = athleteData.Position || 'DB';
+    document.getElementById('position-display').textContent = athleteData.Position || '';
     positionDropdown.dispatchEvent(new Event('change'));
   }
 
   // Populate stat fields
   document.querySelectorAll('[id^="stat-entry-"]').forEach((input) => {
     const statName = input.name;
-    console.log("stat:" + statName);
 
     if (athleteData[statName] !== undefined) {
       input.value = athleteData[statName] !== null ? athleteData[statName] : '';

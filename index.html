@@ -14,7 +14,7 @@
             </div>
 
             <div class="navbar">
-                <button class="tablink" onclick="openTab('Add', this)">Add athlete</button>
+                <button class="tablink" onclick="openTab('Add', this)">Add/Edit Athlete</button>
                 <button class="tablink" onclick="openTab('main', this)" id="defaultOpen">Athlete Report</button>
                 <button class="tablink" onclick="openTab('Download', this)">Export Report</button>
                 <button class="tablink" onclick="openTab('About', this)">About this tool</button>
@@ -23,10 +23,10 @@
             <!-- Main page (charts) --> 
             <div id="main" class="tabcontent">
                 <div class="name-banner">
-                    <h1>Prince Emili</h1>
-                    <h1>DL</h1>
-                    <h1>Senior</h1>
-                    <h1>78</h1>
+                    <h1 id="name-display">Pick an athlete to start</h1>
+                    <h1 id="position-display">Position</h1>
+                    <h1 id="status-display">Status</h1>
+                    <h1 id="number-display">##</h1>
 
                     <div class="dropdown" id="dropdown-container">
                         <button class="dropbtn" id="load-athletes">Pick Athlete</button>
@@ -117,6 +117,7 @@
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
                 <h2>Codebase</h2>
                 <h2>Backend data download</h2>
+                <p>Maintainer: Anna Duan - annaduan@sas.upenn.edu</p>
                 <p>Penn Football stat dashboard v0</p>
                 <p>Update: March 9, 2025</p>
             </div>
@@ -126,6 +127,9 @@
     <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script src="js/open_tab.js"></script>
     <script src="js/main.js" type="module"></script>

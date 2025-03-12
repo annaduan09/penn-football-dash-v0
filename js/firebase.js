@@ -1,5 +1,4 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
-//import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js';
 import { getFirestore, collection, doc, setDoc, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
 
 // Firebase setup
@@ -10,12 +9,9 @@ const firebaseConfig = {
   storageBucket: "penn-football-benchmarking.firebasestorage.app",
   messagingSenderId: "144027601930",
   appId: "1:144027601930:web:a4ea4a588776b2341d63f3",
- // measurementId: "G-834Q3624G1"
-
 };
 
 const app = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 
@@ -27,7 +23,6 @@ window.getDocs = getDocs;
 
 // Add an athlete to Firestore
 async function addAthleteReport(data) {
-  console.log(data)
   if (!data || data.Name == 'Athlete Name' || !data.Status || !data.Position) {
     Toastify({
       text: 'Save failed: Missing required information (Name, Status, Position).',
@@ -38,7 +33,6 @@ async function addAthleteReport(data) {
     }).showToast();
     return;
   }
-
 
 
   const athleteID = `${data.Name}-${data.Status}-${data.Position}`

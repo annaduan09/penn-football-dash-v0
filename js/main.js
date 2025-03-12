@@ -1,4 +1,4 @@
-
+import { addAthleteReport } from './firebase.js';
 import { initChart } from './barchart.js';
 import { initStatEntry } from './stat_entry.js';
 import { calculateChartData } from './chart_data.js';
@@ -73,3 +73,9 @@ document.getElementById('load-athletes').addEventListener('click', loadAthleteDr
 
 // Enable athlete selection from dropdown
 setupAthleteSelectionListener();
+
+// Save/update athlete data
+document.getElementById('save-athlete').addEventListener('click', () => {
+  const data = collectAthleteData();
+  addAthleteReport(data);
+});
