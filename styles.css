@@ -95,13 +95,45 @@ body {
 }
 
 .chart-area > div {
+  background-color: rgb(249, 252, 255);
+  max-width: 30vw;
+  font-size: 30;
+  height: 35vh;
+  border-radius: 1vw;
+}
+
+@media only screen and (max-width: 1200px) {
+.chart-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5vw;
+    text-align: center;
+}
+
+.chart-area > div {
+  background-color: rgb(249, 252, 255);
+  max-width: 45vw;
+  font-size: 30;
+  height: 35vh;
+  border-radius: 1vw;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .chart-area {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .chart-area > div {
     background-color: rgb(249, 252, 255);
-    max-width: 30vw;
-    padding: 1vw;
+    max-width: 80vw;
     font-size: 30;
     height: 35vh;
     border-radius: 1vw;
-}
+  }
+  }
 
 /* Athlete search/dropdown */
 .dropbtn {
