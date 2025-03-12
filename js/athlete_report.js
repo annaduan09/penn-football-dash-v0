@@ -17,12 +17,13 @@ function collectAthleteData() {
 }
 
 async function loadAthleteDropdown() {
-  console.log("Toggle list");
-  const dropdownMenu = document.getElementById('athlete-list');
-  toggleDropdownVisibility(dropdownMenu);
+  const athleteList = document.getElementById('athlete-list');
+  const dropdown = document.getElementById('myDropdown');
+  //toggleDropdownVisibility(athleteList);
+  toggleDropdownVisibility(dropdown);
 
-  if (dropdownMenu.classList.contains('visible')) {
-    dropdownMenu.innerHTML = '';
+  if (dropdown.classList.contains('visible')) {
+    athleteList.innerHTML = '';
     const athletes = await getAthleteReports();
 
     athletes.forEach((athlete) => {
@@ -30,14 +31,14 @@ async function loadAthleteDropdown() {
       listItem.textContent = `${athlete.Name} (${athlete.Position}) - ${athlete.Status}`;
       listItem.dataset.athlete = JSON.stringify(athlete);
       listItem.classList.add('athlete-item');
-      dropdownMenu.appendChild(listItem);
+      athleteList.appendChild(listItem);
     });
   }
 }
 
-function toggleDropdownVisibility(dropdownMenu) {
-  dropdownMenu.classList.toggle('hidden');
-  dropdownMenu.classList.toggle('visible');
+function toggleDropdownVisibility(el) {
+  el.classList.toggle('hidden');
+  el.classList.toggle('visible');
 }
 
 function populateAthleteFields(athleteData) {
@@ -81,30 +82,29 @@ function populateAthleteFields(athleteData) {
 }
 
 function setupAthleteSelectionListener() {
-  const dropdownMenu = document.getElementById('athlete-list');
+  const athleteList = document.getElementById('athlete-list');
+  const dropdown = document.getElementById('myDropdown');
 
   // Close dropdown
   document.addEventListener('click', (event) => {
     const dropdownContainer = document.getElementById('dropdown-container');
 
     if (!dropdownContainer.contains(event.target)) {
-      console.log("clicked somewhere");
-      dropdownMenu.classList.add('hidden');
-      dropdownMenu.classList.remove('visible');
+      dropdown.classList.add('hidden');
+      dropdown.classList.remove('visible');
     }
   });
 
   // Populate input fields
-  dropdownMenu.addEventListener('click', (event) => {
-    console.log("Clicked name");
+  athleteList.addEventListener('click', (event) => {
     const target = event.target;
     if (target.classList.contains('athlete-item')) {
       const athleteData = JSON.parse(target.dataset.athlete);
 
       populateAthleteFields(athleteData);
 
-      dropdownMenu.classList.add('hidden');
-      dropdownMenu.classList.remove('visible');
+      dropdown.classList.add('hidden');
+      dropdown.classList.remove('visible');
     }
   });
 }

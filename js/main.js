@@ -57,9 +57,15 @@ let strength = document.querySelector('#strength-chart')
 
 let speed = document.querySelector('#speed-chart')
 
+let power = document.querySelector('#power-chart')
+
+let agility = document.querySelector('#agility-chart')
+
 initChart(anthro)
 initChart(strength)
 initChart(speed)
+initChart(power)
+initChart(agility)
 
 
 // Load athletes
