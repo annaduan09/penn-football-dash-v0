@@ -1,5 +1,6 @@
 import { addAthleteReport } from './firebase.js';
-import { initChart } from './barchart.js';
+import { initBar } from './barchart.js';
+import { initRadar } from './radar.js';
 import { initStatEntry } from './stat_entry.js';
 import { calculateChartData } from './chart_data.js';
 
@@ -42,30 +43,36 @@ initStatEntry(statListEl, positionDropdownEl, statNames, positions, events);
 // Calculate chart data
 const chartData = calculateChartData(indivStats, events);
 
-const { positionMedians, playerPercentiles, playerStats, playerStatsValues, categoryPercentiles } =
+// Get chart elements
+const chartElements = {
+  strength: document.querySelector('#strength-chart'),
+  power: document.querySelector('#power-chart'),
+  speed: document.querySelector('#speed-chart'),
+  agility: document.querySelector('#agility-chart'),
+  anthro: document.querySelector('#anthropometrics-chart'),
+  radar: document.querySelector('#radar-chart'),
+};
+
+// Render charts
+function renderCharts() {
+  const { positionMedians, playerPercentiles, playerStats, playerStatsValues, categoryPercentiles } =
     chartData.getCalculatedData();
 
+  Object.values(chartElements).forEach((chartEl, index) => {
+    if (index < 5) {
+      initBar(chartEl, positionMedians, playerStats, playerStatsValues, playerPercentiles);
+    } else {
+      initRadar(chartElements.radar, categoryPercentiles);
+    }
+  });
+}
 
+// Initial render
+renderCharts();
 
-
-
-// Init chart
-
-let anthro = document.querySelector('#anthropometrics-chart')
-
-let strength = document.querySelector('#strength-chart')
-
-let speed = document.querySelector('#speed-chart')
-
-let power = document.querySelector('#power-chart')
-
-let agility = document.querySelector('#agility-chart')
-
-initChart(anthro)
-initChart(strength)
-initChart(speed)
-initChart(power)
-initChart(agility)
+// Update charts on custom events
+events.addEventListener('statFilled', renderCharts);
+events.addEventListener('positionSelected', renderCharts);
 
 
 // Load athletes
