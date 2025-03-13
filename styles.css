@@ -57,7 +57,7 @@ body {
     grid-area: main;
     background-color: white;
     display: none;
-    padding: 1vw 1vw;
+    padding: 2vw 2vw;
     height: 100%;
 }
 
@@ -102,38 +102,6 @@ body {
   border-radius: 1vw;
 }
 
-@media only screen and (max-width: 1200px) {
-.chart-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5vw;
-    text-align: center;
-}
-
-.chart-area > div {
-  background-color: rgb(249, 252, 255);
-  max-width: 45vw;
-  font-size: 30;
-  height: 35vh;
-  border-radius: 1vw;
-}
-}
-
-@media only screen and (max-width: 600px) {
-  .chart-area {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .chart-area > div {
-    background-color: rgb(249, 252, 255);
-    max-width: 80vw;
-    font-size: 30;
-    height: 35vh;
-    border-radius: 1vw;
-  }
-  }
 
 /* Athlete search/dropdown */
 .dropbtn {
@@ -149,7 +117,7 @@ body {
     background-color: #7b0f0f;
   }
   
-  #myInput {
+  #myInput, #myInput-1 {
     box-sizing: border-box;
     font-size: 1rem;
     padding: 1vw 1vw 1vw 1vw;
@@ -157,18 +125,18 @@ body {
     border-bottom: 1px solid #ddd;
   }
   
-  #myInput:focus {outline: 0.5rem solid #ddd;}
+  #myInput:focus, #myInput-1:focus {outline: 0.5rem solid #ddd;}
   
   .dropdown {
     position: relative;
   }
 
-  #load-athletes {
+  #load-athletes, #edit-athlete {
     margin-left: auto;
   }
   
 
-  .dropdown-content {
+  .dropdown-content, .dropdown-content-1 {
     display: none;
     position: absolute;
     background-color: #f6f6f6;
@@ -179,8 +147,8 @@ body {
     overflow-y: auto;
   }
   
-  .dropdown-content li {
-    padding: 12px 16px;
+  .dropdown-content li, .dropdown-content-1 li  {
+    padding: 1vw 1vw;
     text-decoration: none;
     display: block;
   }
@@ -221,6 +189,21 @@ body {
     color: #980000;
   }
   
+  #stats-page {
+    display: grid;
+    grid-template-areas: 'left right right';
+    column-gap: 5vw;
+  }
+
+  #stats-instructions {
+    grid-area: 'left';
+
+  }
+
+  #stats {
+    grid-area: 'right';
+  }
+
   ul#stats-list {
     width: 60vw;
     column-count: 2; 
@@ -244,6 +227,7 @@ body {
   .stat-category-label {
     font-weight: bold;
   }
+
   label {
     width: 10vw;
   }
@@ -414,3 +398,74 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
   font-family: Lato, sans-serif;
   text-align: right;
 }
+
+
+/* Smaller screen media queries */
+@media only screen and (max-width: 1200px) {
+  .chart-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5vw;
+      text-align: center;
+  }
+  
+  .chart-area > div {
+    background-color: rgb(249, 252, 255);
+    max-width: 45vw;
+    font-size: 30;
+    height: 35vh;
+    border-radius: 1vw;
+  }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .chart-area {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .chart-area > div {
+      background-color: rgb(249, 252, 255);
+      max-width: 80vw;
+      font-size: 30;
+      height: 35vh;
+      border-radius: 1vw;
+    }
+  
+    ul#stats-list {
+      width: 90vw;
+      column-count: 1; 
+      border-color: transparent;
+      font-family: Lato, sans-serif;
+      list-style-type: none;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+
+
+  label {
+    width: 25vw;
+  }
+  
+  #stats-list input {
+    font-family: Lato, sans-serif;
+    border-color: transparent;
+    font-size: 0.9rem;
+    background-color: #f8f8f8;
+    border-radius: 0.3rem;
+    font-weight: 200;
+    color: black;
+    appearance: textfield;
+    text-align: center;
+    width: 10vw;
+  }
+  
+  
+  .input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+    }

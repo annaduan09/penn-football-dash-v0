@@ -76,10 +76,17 @@ events.addEventListener('positionSelected', renderCharts);
 
 
 // Load athletes
-document.getElementById('load-athletes').addEventListener('click', loadAthleteDropdown);
+document.getElementById('load-athletes').addEventListener('click', function() {
+  loadAthleteDropdown('athlete-list', 'myDropdown');
+});
+
+document.getElementById('load-athletes-1').addEventListener('click', function() {
+  loadAthleteDropdown('athlete-list-1', 'myDropdown-1');
+});
 
 // Enable athlete selection from dropdown
-setupAthleteSelectionListener();
+setupAthleteSelectionListener('athlete-list', 'myDropdown', 'dropdown-container');
+setupAthleteSelectionListener('athlete-list-1', 'myDropdown-1', 'dropdown-container-1');
 
 // Save/update athlete data
 document.getElementById('save-athlete').addEventListener('click', () => {

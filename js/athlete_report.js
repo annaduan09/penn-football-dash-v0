@@ -16,9 +16,9 @@ function collectAthleteData() {
   return data;
 }
 
-async function loadAthleteDropdown() {
-  const athleteList = document.getElementById('athlete-list');
-  const dropdown = document.getElementById('myDropdown');
+async function loadAthleteDropdown(listEl, dropdownEl) {
+  const athleteList = document.getElementById(listEl);
+  const dropdown = document.getElementById(dropdownEl);
   toggleDropdownVisibility(dropdown);
 
   if (dropdown.classList.contains('visible')) {
@@ -41,7 +41,6 @@ function toggleDropdownVisibility(el) {
 }
 
 function populateAthleteFields(athleteData) {
-  console.log("populate athlete fields");
 
   // Populate demographics
   document.getElementById('name-input').value = athleteData.Name || '';                 // Inputs
@@ -88,13 +87,13 @@ function populateAthleteFields(athleteData) {
   });
 }
 
-function setupAthleteSelectionListener() {
-  const athleteList = document.getElementById('athlete-list');
-  const dropdown = document.getElementById('myDropdown');
+function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) {
+  const athleteList = document.getElementById(listEl);
+  const dropdown = document.getElementById(dropdownEl);
 
   // Close dropdown
   document.addEventListener('click', (event) => {
-    const dropdownContainer = document.getElementById('dropdown-container');
+    const dropdownContainer = document.getElementById(dropdownContainerEl);
 
     if (!dropdownContainer.contains(event.target)) {
       dropdown.classList.add('hidden');
