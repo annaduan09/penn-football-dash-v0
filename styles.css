@@ -177,13 +177,15 @@ body {
   #status-input,
   #number-input {
     font-size: 2rem;
-    border: none;
-    background-color: transparent;
+    border: 1px solid #c3c3c3;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    background-color: rgb(219, 219, 219);
   }
   
 
-  #athlete-position select:hover,
   #name-input:hover,
+  #position-input select:hover,
   #status-input:hover,
   #number-input:hover {
     color: #980000;
