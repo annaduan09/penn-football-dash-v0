@@ -5,9 +5,13 @@
     box-sizing: border-box;
 }
 
+h1 {
+  font-weight: lighter;
+}
+
 body {
     font-family: Poppins, sans-serif;
-    color: #1f1f1f;
+    color: #272727;
 }
 
 .grid-container {
@@ -58,6 +62,7 @@ body {
     background-color: white;
     display: none;
     padding: 2vw 2vw;
+    padding-bottom: 0;
     height: 100%;
 }
 
@@ -73,32 +78,21 @@ body {
     margin-bottom: 1rem;
 }
 
-.name-banner > h1 {
-    font-weight: lighter;
-    font-size: 2rem;
-}
-
-#bio > h1 {
-  font-weight: lighter;
-  font-size: 2rem;
-}
-
 #name-input, #name-display {
   text-transform: capitalize;
 }
 
 .chart-area {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1vw;
-    text-align: center;
 }
 
 .chart-area > div {
-  background-color: rgb(249, 252, 255);
-  max-width: 30vw;
+  background-color: rgb(243, 243, 243);
+  max-width: 25vw;
   font-size: 30;
-  height: 35vh;
+  height: 30vh;
   border-radius: 1vw;
 }
 
@@ -107,7 +101,7 @@ body {
 .dropbtn {
     background-color: #a01414;
     color: white;
-    padding: 16px;
+    padding: 0.5rem;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -134,7 +128,6 @@ body {
   #load-athletes, #edit-athlete {
     margin-left: auto;
   }
-  
 
   .dropdown-content, .dropdown-content-1 {
     display: none;
@@ -156,7 +149,6 @@ body {
   .dropdown li:hover {
     background-color: #ddd;
 }
-  
 
 .hidden {
   display: none;
@@ -176,7 +168,6 @@ body {
   #name-input,
   #status-input,
   #number-input {
-    font-size: 2rem;
     border: 1px solid #c3c3c3;
     border-radius: 0.5rem;
     padding: 0.2rem;
@@ -278,7 +269,6 @@ body {
     resize: vertical;
     border-color: rgba(160, 159, 159, 0.3);
     border-width: 1px;
-    color: gray;
     border-radius: 0.35em;
   }
 
@@ -408,11 +398,9 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.5vw;
-      text-align: center;
   }
   
   .chart-area > div {
-    background-color: rgb(249, 252, 255);
     max-width: 45vw;
     font-size: 30;
     height: 35vh;
@@ -424,11 +412,9 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
     .chart-area {
         display: flex;
         flex-direction: column;
-        text-align: center;
     }
   
     .chart-area > div {
-      background-color: rgb(249, 252, 255);
       max-width: 80vw;
       font-size: 30;
       height: 35vh;
@@ -469,5 +455,19 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+  }
+
+  #stats-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #stats-instructions {
+    grid-area: 'left';
+
+  }
+
+  #stats {
+    grid-area: 'right';
   }
     }
