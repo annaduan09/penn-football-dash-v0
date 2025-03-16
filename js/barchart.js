@@ -56,7 +56,18 @@ function initBar(barEl, positionMedians, statNames, playerStats, playerPercentil
     data: {
       x: 'x',
       columns: columns,
-      labels: true,
+      labels: {
+        format: {
+          Percentile: function (value, id, index) {
+            const rawValue = filteredPlayerStats[index];
+            const statName = filteredStatNames[index];
+            const unit = getUnit(statName);
+            return (rawValue !== undefined)
+              ? `${Number(rawValue).toFixed(1)} ${unit}`
+              : "";
+          }
+        }
+      },
       type: 'bar',
       color: function(color, d) {
         if (d && d.index !== undefined) {
@@ -112,16 +123,12 @@ function initBar(barEl, positionMedians, statNames, playerStats, playerPercentil
           <div class="bb-tooltip">
             <div class="tooltip-title">${statName}</div>
             <div class="tooltip-row">
-              <span class="tooltip-label">Percentile:&nbsp;</span>
+              <span class="tooltip-label">Athlete percentile:&nbsp;</span>
               <span class="tooltip-value"> ${percentile}%</span>
             </div>
             <div class="tooltip-row">
-              <span class="tooltip-label">Median:&nbsp;</span>
+              <span class="tooltip-label">Position median:&nbsp;</span>
               <span class="tooltip-value"> ${median}</span>
-            </div>
-            <div class="tooltip-row">
-              <span class="tooltip-label">Value:&nbsp;</span>
-              <span class="tooltip-value"> ${value}</span>
             </div>
           </div>
         `;

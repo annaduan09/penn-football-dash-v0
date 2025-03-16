@@ -94,13 +94,18 @@ body {
   box-shadow: 0 0 1rem rgba(7, 9, 173, 0.1);
 }
 
+
+
+/* Athlete search/dropdown */
 #dropdown-container {
   background-color: transparent;
   box-shadow: none;
 }
 
 
-/* Athlete search/dropdown */
+.dropdown-content {
+  width: 10vw;
+}
 .dropbtn {
     background-color: #a01414;
     color: white;
@@ -109,13 +114,16 @@ body {
     border: none;
     cursor: pointer;
     margin: 0.5rem;
+    margin-bottom: 0;
   }
   
   .dropbtn:hover, .dropbtn:focus {
     background-color: #7b0f0f;
   }
+
   
   #myInput, #myInput-1 {
+    width: 100%;
     box-sizing: border-box;
     font-size: 1rem;
     padding: 1vw 1vw 1vw 1vw;
@@ -317,6 +325,7 @@ body {
   font-family: Poppins, sans-serif;
   font-weight: 600;
   margin-top: 1em;
+  color: #666;
   text-transform: uppercase;
 }
 
