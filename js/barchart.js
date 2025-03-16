@@ -1,5 +1,17 @@
 const barInstances = {};
 
+function destroyAllBars() {
+  Object.values(barInstances).forEach(chart => {
+    if (chart) {
+      chart.destroy();
+    }
+  });
+
+  Object.keys(barInstances).forEach(key => {
+    delete barInstances[key];
+  });
+}
+
 function initBar(barEl, positionMedians, statNames, playerStats, playerPercentiles) {
   const statCategories = {
     anthropometrics: ['Weight', 'Height', 'Wingspan'],
@@ -150,4 +162,4 @@ function initBar(barEl, positionMedians, statNames, playerStats, playerPercentil
   }
 }
 
-export { initBar };
+export { initBar, destroyAllBars };

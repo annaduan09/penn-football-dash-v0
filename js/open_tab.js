@@ -1,3 +1,6 @@
+import { destroyAllBars } from './barchart.js';
+import { renderCharts } from './main.js';
+
 function openTab(tabName, tabEl) {
 
     var i, tabcontent, tablinks;
@@ -14,9 +17,11 @@ function openTab(tabName, tabEl) {
     document.getElementById(tabName).style.display = "block";
 
     tabEl.style.backgroundColor = "#a01414";
+
+    if (tabName === "main") {
+        destroyAllBars();
+        renderCharts();
+      }
 }
 
 window.openTab = openTab;
-
-
-

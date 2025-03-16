@@ -23,7 +23,6 @@ const indivStats = await indivStatsResponse.json();
 
 
 
-
 // Event target for custom events
 const events = new EventTarget();
 
@@ -52,6 +51,7 @@ const chartElements = {
   anthro: document.querySelector('#anthropometrics-chart'),
   radar: document.querySelector('#radar-chart'),
 };
+
 
 // Render charts
 function renderCharts() {
@@ -93,3 +93,5 @@ document.getElementById('save-athlete').addEventListener('click', () => {
   const data = collectAthleteData();
   addAthleteReport(data);
 });
+
+export {renderCharts};
