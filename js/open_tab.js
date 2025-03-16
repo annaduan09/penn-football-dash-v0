@@ -1,8 +1,7 @@
 import { destroyAllBars } from './barchart.js';
 import { renderCharts } from './main.js';
 
-function openTab(tabName, tabEl) {
-
+export function openTab(tabName, tabEl) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -23,5 +22,3 @@ function openTab(tabName, tabEl) {
         renderCharts();
       }
 }
-
-window.openTab = openTab;

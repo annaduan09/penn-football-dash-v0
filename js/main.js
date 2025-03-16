@@ -9,12 +9,23 @@ import {
   loadAthleteDropdown,
   setupAthleteSelectionListener
 } from './athlete_report.js';
+import { openTab } from "./open_tab.js";
 
 
 // Default/switch tabs
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("defaultOpen").click();
+document.addEventListener("DOMContentLoaded", () => {
+  const btnAdd = document.getElementById("btnAdd");
+  const btnMain = document.getElementById("btnMain");
+  const btnAbout = document.getElementById("btnAbout");
+
+  btnAdd.addEventListener("click", (evt) => openTab("Add", evt.currentTarget));
+  btnMain.addEventListener("click", (evt) => openTab("main", evt.currentTarget));
+  btnAbout.addEventListener("click", (evt) => openTab("About", evt.currentTarget));
+  
+  openTab("main", btnMain);
+
 });
+
 
 // Fetch individual stats data
 const indivStatsResponse = await fetch('data/stats_2020_2024.json');
