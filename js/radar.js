@@ -1,8 +1,6 @@
 const radarInstances = {};
 
 function initRadar(radarEl, categoryPercentiles) {
-  console.log('Category Percentiles', categoryPercentiles);
-
   let columns;
 
   if (categoryPercentiles.length < 4) {
