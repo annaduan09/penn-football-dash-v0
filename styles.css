@@ -73,7 +73,6 @@ body {
     display: flex;
     column-gap: 1vw;
     align-items: center;
-    margin-bottom: 1rem;
 }
 
 #name-input, #name-display {
@@ -82,11 +81,16 @@ body {
 
 .chart-area {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1vw;
+    grid-template-columns: 3fr 1fr;
 }
 
-.chart-area > div {
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1vw;
+}
+
+.chart-grid > div {
   background-color: white;
   max-width: 22vw;
   height: 30vh;
@@ -94,7 +98,9 @@ body {
   box-shadow: 0 0 1rem rgba(7, 9, 173, 0.1);
 }
 
-
+.chart-area > p {
+  padding-right: 3rem;
+}
 
 /* Athlete search/dropdown */
 #dropdown-container {
@@ -102,10 +108,10 @@ body {
   box-shadow: none;
 }
 
-
 .dropdown-content {
   width: 10vw;
 }
+
 .dropbtn {
     background-color: #a01414;
     color: white;
@@ -113,8 +119,6 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin: 0.5rem;
-    margin-bottom: 0;
   }
   
   .dropbtn:hover, .dropbtn:focus {
@@ -410,31 +414,29 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
 
 /* Smaller screen media queries */
 @media only screen and (max-width: 1200px) {
-  .chart-area {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5vw;
+  .chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
   }
   
-  .chart-area > div {
-    max-width: 45vw;
-    font-size: 30;
-    height: 35vh;
-    border-radius: 1vw;
+  .chart-grid > div {
+    background-color: white;
+    max-width: 25vw;
+    height: 30vh;
   }
   }
   
   @media only screen and (max-width: 600px) {
-    .chart-area {
-        display: flex;
-        flex-direction: column;
+    .chart-grid {
+      display: flex;
+      flex-direction: column;
     }
-  
-    .chart-area > div {
+    
+    .chart-grid > div {
+      background-color: white;
       max-width: 80vw;
-      font-size: 30;
-      height: 35vh;
-      border-radius: 1vw;
+      height: 30vh;
     }
   
     ul#stats-list {

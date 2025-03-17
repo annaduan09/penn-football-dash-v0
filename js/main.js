@@ -1,5 +1,5 @@
 import { addAthleteReport } from './firebase.js';
-import { initBar } from './barchart.js';
+import { initBar, destroyAllBars } from './barchart.js';
 import { initRadar } from './radar.js';
 import { initStatEntry } from './stat_entry.js';
 import { calculateChartData } from './chart_data.js';
@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
   openTab("main", btnMain);
 
+});
+
+window.addEventListener("mainTabActivated", () => {
+  destroyAllBars();
+  renderCharts();
 });
 
 

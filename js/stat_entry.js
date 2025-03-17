@@ -4,8 +4,6 @@ function initStatEntry(statListEl, positionDropdownEl, stats, positions, events)
   const statListItems = {};
   const positionPositionItems = {};
 
-  console.log(listEl);
-
   // Default notes for each position
   const positionNotes = {
     OL: "",
@@ -46,7 +44,7 @@ function initStatEntry(statListEl, positionDropdownEl, stats, positions, events)
 
   /* Utility Functions */
   function clearPlaceholder() {
-    if (this.id === `name-input` && this.value === `Athlete Name`) this.value = ``;
+    if (this.id === `name-input` && this.value === `Name`) this.value = ``;
     if (this.id === `number-input` && this.value === `#`) this.value = ``;
   }
 
@@ -81,7 +79,7 @@ function initStatEntry(statListEl, positionDropdownEl, stats, positions, events)
 
   function resetDefaultValue() {
     if (this.id === `position-input`) this.value = `DB`;
-    if (this.id === `name-input`) this.value = `Athlete Name`;
+    if (this.id === `name-input`) this.value = `Name`;
     if (this.id === `number-input`) this.value = `#`;
   }
 
@@ -125,7 +123,7 @@ function initStatEntry(statListEl, positionDropdownEl, stats, positions, events)
               ${stat}
           </label>
             <div class="input-wrapper">
-              <input type="number" id="stat-entry-${stat}" name="${stat}" max="1000" step="any">
+              <input type="number" id="stat-entry-${stat}" name="${stat}" max="700" step="any">
               <span class="unit">${unit}</span>
             </div>`;
         statListItems[stat] = item;

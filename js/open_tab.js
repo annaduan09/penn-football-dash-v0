@@ -1,6 +1,3 @@
-import { destroyAllBars } from './barchart.js';
-import { renderCharts } from './main.js';
-
 export function openTab(tabName, tabEl) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -18,7 +15,7 @@ export function openTab(tabName, tabEl) {
     tabEl.style.backgroundColor = "#a01414";
 
     if (tabName === "main") {
-        destroyAllBars();
-        renderCharts();
+        const mainEvent = new CustomEvent("mainTabActivated");
+        window.dispatchEvent(mainEvent);
       }
 }
