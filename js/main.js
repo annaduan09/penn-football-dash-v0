@@ -56,8 +56,11 @@ const chartElements = {
 
 // Define renderCharts after chartData is declared
 function renderCharts() {
-  const { positionMedians, playerPercentiles, playerStats, playerStatsValues, categoryPercentiles } =
+  const { playerRSI, positionMedians, playerPercentiles, playerStats, playerStatsValues, categoryPercentiles } =
     chartData.getCalculatedData();
+
+    if (playerRSI > 0) 
+      document.getElementById('rsi-display').textContent = "RSI: " + (Math.round((playerRSI + Number.EPSILON) * 100) / 100); 
 
   Object.values(chartElements).forEach((chartEl, index) => {
     if (index < 5) {

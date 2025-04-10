@@ -4,6 +4,7 @@ function calculateChartData(indivStats, events) {
   let playerPosition = 'DB';
   const playerStats = [];
   const playerStatsValues = [];
+  let playerRSI = 0;
   let positionStatsValues = [];
   let positionMedians = [];
   let playerPercentiles = [];
@@ -88,6 +89,17 @@ function calculateChartData(indivStats, events) {
     return positionMedians;
   }
 
+  // Calculate Relative strength index (RSI)
+  function getRSI() {
+    let playerSquat = playerStatsValues[playerStats.indexOf("Squat")];
+    let playerBench = playerStatsValues[playerStats.indexOf("Bench")];
+    let playerWeight = playerStatsValues[playerStats.indexOf("Weight")];
+    
+    playerRSI = (playerSquat + playerBench)/(playerWeight * 2)
+
+    return playerRSI;
+  }
+
   // Handle stat changes
   function updatePositionStatsValues() {
     positionStatsValues = playerStats.map((statName) => {
@@ -95,6 +107,7 @@ function calculateChartData(indivStats, events) {
     });
 
     positionStatsValues = positionStatsValues.map((statArray) => statArray.flat(1));
+    getRSI();
     getMedians();
     getPercentiles();
     getCategoryPercentiles();
@@ -129,6 +142,9 @@ function calculateChartData(indivStats, events) {
       }
     }
     positionStatsValues = positionStatsValues.map((statArray) => statArray.flat(1));
+
+
+    getRSI();
     getMedians();
     getPercentiles();
     getCategoryPercentiles();
@@ -138,6 +154,7 @@ function calculateChartData(indivStats, events) {
   function getCalculatedData() {
 
     return {
+      playerRSI,
       positionMedians,
       playerPercentiles,
       playerStats,
