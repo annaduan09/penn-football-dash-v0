@@ -1,225 +1,253 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Penn Football Strength Benchmarking</title>
-        <link rel="icon" type="image/x-icon" href="www/favicon.ico">
-    </head>
-    <body>
 
-        <link rel="stylesheet" href="styles.css">
-        <script src="js/open_tab.js" type="module"></script>
-        <script src="js/main.js" type="module"></script>
-        <script src="js/search_athletes.js" type="module"></script>
-        
-        <div class="grid-container">
-            <div class="header">
-                <img src="www/penn_shield.svg" alt="Penn Logo">
-                <h1>Penn Football Testing Dashboard</h1>
-            </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penn Football Strength Benchmarking</title>
+    <link rel="icon" type="image/x-icon" href="www/favicon.ico">
+</head>
 
-            <div class="navbar">
-                <button id="btnAdd" class="tablink">Add Data</button>
-                <button id="btnMain" class="tablink" data-default="true">Athlete Report</button>
-                <button id="btnComp" class="tablink">Compare Athletes</button>
-                <button id="btnAbout" class="tablink">About this tool</button>
-            </div>
+<body>
 
-            <!-- Main page (charts) --> 
-            <div id="main" class="tabcontent">
-                <div class="name-banner">
-                    <h1 id="name-display">Pick an athlete to start</h1>
-                    <h1 id="position-display"></h1>
-                    <h1 id="status-display"></h1>
-                    <h1 id="number-display"></h1>
-                    <h1 id="rsi-display"></h1>
-                    <div class="dropdown" id="dropdown-container">
-                        <button class="dropbtn" id="load-athletes">Saved Athletes</button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <input type="text" placeholder="Search.." id="myInput">
-                          <ul id="athlete-list"></ul>
-                        </div>
-                        <br>
-                        <br>
-                    </div>
-                </div>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/open_tab.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/search_athletes.js" type="module"></script>
 
-                <div class="chart-area">
-                    <div class="chart-grid">
-                        <div id = "radar-chart">radar</div>
-                        <div id = "anthropometrics-chart" class = "pct-chart">anthro</div>
-                        <div id = "strength-chart" class = "pct-chart">strength</div>
-                        <div id = "power-chart" class = "pct-chart">power</div>
-                        <div id = "speed-chart" class = "pct-chart">speed</div>
-                        <div id = "agility-chart" class = "pct-chart">agility</div>
-                    </div> 
-                    <p>Charts visualize athletes' percentiles for each stat within their position groups. For example, 80th percentile indicates that an athlete scored better in a stat than 80% of his position group. The number above each bar is the absolute value of each stat. Hover over each bar to see the position group median and the athlete's percentile.</p>
-                </div> 
-            </div>
-
-<!-- Add athlete -->
-<div id="Add" class="tabcontent">
-    <div id="stats-page">
-        <div id="stats-instructions">
-            <h2>Add new athlete</h2>
-            <p>To add a new athlete to the database, enter his Name, Position, Year, and Number to the right. The minimum fields needed to create a profile are: Name, Position, and Year. Click the "Save Athlete" button once you are done. You can use the "Clear Stats" button or refresh the page to start over.</p>
-            <br>
-            <h2>Edit saved athlete</h2>
-            <p>To edit a saved athlete, click "Saved Athletes" to pull up his profile. Note: if you change the athlete's Name or Year, you will create a new profile. Once you are satisfied with your changes, click "Save Athlete".</p>
-            <br>
-            <div class="dropdown" id="dropdown-container-1">
-                <button class="dropbtn" id="load-athletes-1">Saved Athletes</button>
-                <div id="myDropdown-1" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput-1">
-                  <ul id="athlete-list-1"></ul>
-                </div>
-              </div>
+    <div class="grid-container">
+        <div class="header">
+            <img src="www/penn_shield.svg" alt="Penn Logo">
+            <h1>Penn Football Testing Dashboard</h1>
         </div>
 
-        <div id="stats">
-            <div id="bio">
-                <input type="text" id="name-input" value="Name" title = "Name">
-                <div id="position-input" title = "Position">DB</div>
-                <select id="status-input" title = "Year">
-                    <option value="HS">HS</option>
-                    <option value="FR">FR</option>
-                    <option value="SO" selected>SO</option>
-                    <option value="JR">JR</option>
-                    <option value="SE">SE</option>
-                </select>
-                <input type="text" id="number-input" value="#" title = "Number">
-            </div>
-            <fieldset id="stat-entry">
-                <ul id="stats-list">
-                    <li>
-                        <label for="bench-stat">Bench</label>
-                        <div class="input-wrapper">
-                            <input type="number" id="bench-stat" class="stat-input" name="bench" aria-label="Bench press weight">
-                            <span class="unit">pounds</span>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="wingspan-stat">Wingspan</label>
-                        <div class="input-wrapper">
-                            <input type="number" id="wingspan-stat" class="stat-input" name="wingspan" aria-label="Wingspan measurement in inches">
-                            <span class="unit">inches</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <div id="fieldset-buttons">
-                    <button id="save-athlete" aria-label="Save athlete to database">SAVE ATHLETE</button>
-                    <button id="clear-all" aria-label="Clear all athlete data">CLEAR STATS</button>
-                </div>
-            </fieldset>
+        <div class="navbar">
+            <button id="btnAdd" class="tablink">Add Data</button>
+            <button id="btnMain" class="tablink" data-default="true">Athlete Report</button>
+            <button id="btnComp" class="tablink">Compare Athletes</button>
+            <button id="btnAbout" class="tablink">About this tool</button>
         </div>
-    </div>
-</div>
 
-            <!-- Compare Athletes 
-                 speed: ['10Y Sprint', 'Flying 10'],
-    agility: ['Pro Agility', 'L Drill', '60Y Shuttle'],
-    power: ['Vertical Jump', 'Broad Jump', 'Hang Clean', 'Power Clean'],
-    strength: ['Squat', 'Bench', '225lb Bench'],
-             
-            --> 
-            <div id="Comp" class="tabcontent">
-                <div id="Comp-cards">
-                    <div id="Comp-athlete1">
-                        <h1>Athlete 1</h1>
-                        <h3>Defensive Back</h3>
-                        <p>Sophomore</p>
-                        <p>RSI: 3.3</p>
-                        <p>Last test: 2023</p>
-                        <hr>
-                        <br>
-                        <strong>Strength</strong>
-                        <ul>
-                            <li>Squat: 440</li>
-                            <li>Bench: 300</li>
-                            <li>225lb Bench: 12</li>
-                        </ul>
-                        <strong>Speed</strong>
-                        <ul>
-                            <li>10-Yard Sprint: 0.11</li>
-                            <li>Flying 10: 0.91</li>
-                        </ul>
-                        <strong>Agility</strong>
-                        <ul>
-                            <li>Pro Agility: 0.11</li>
-                            <li>L-drill: 0.91</li>
-                            <li>60-Yard Shuttle: 0.91</li>
-                        </ul>
-                        <strong>Power</strong>
-                        <ul>
-                            <li>Vertical Jump: 35</li>
-                            <li>Broad Jump: 110</li>
-                            <li>Hang Clean: 250</li>
-                            <li>Power Clean: 250</li>
-                        </ul>
+        <!-- Main page (charts) -->
+        <div id="main" class="tabcontent">
+            <div class="name-banner">
+                <h1 id="name-display">Pick an athlete to start</h1>
+                <h1 id="position-display"></h1>
+                <h1 id="status-display"></h1>
+                <h1 id="number-display"></h1>
+                <h1 id="rsi-display"></h1>
+                <div class="dropdown" id="dropdown-container">
+                    <button class="dropbtn" id="load-athletes">Saved Athletes</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="myInput">
+                        <ul id="athlete-list"></ul>
                     </div>
-                    <div id="Comp-athlete2">
-                        <h1>Athlete 2</h1>
-                        <h3>Defensive Back</h3>
-                        <p>Sophomore</p>
-                        <p>RSI: 3.3</p>
-                        <p>Last test: 2023</p>
-                        <hr>
-                        <br>
-                        <strong>Strength</strong>
-                        <ul>
-                            <li>Squat: 440</li>
-                            <li>Bench: 300</li>
-                            <li>225lb Bench: 12</li>
-                        </ul>
-                        <strong>Speed</strong>
-                        <ul>
-                            <li>10-Yard Sprint: 0.11</li>
-                            <li>Flying 10: 0.91</li>
-                        </ul>
-                        <strong>Agility</strong>
-                        <ul>
-                            <li>Pro Agility: 0.11</li>
-                            <li>L-drill: 0.91</li>
-                            <li>60-Yard Shuttle: 0.91</li>
-                        </ul>
-                        <strong>Power</strong>
-                        <ul>
-                            <li>Vertical Jump: 35</li>
-                            <li>Broad Jump: 110</li>
-                            <li>Hang Clean: 250</li>
-                            <li>Power Clean: 250</li>
-                        </ul>
-                    </div>
-                </div> 
-            </div>
-
-
-            <!-- About --> 
-            <div id="About" class="tabcontent">
-                <div id="About-text">
-                    <h2>Overview</h2>
-                    <p>This tool is designed to visualize athletes' physical attributes and off-field performance metrics. Athletes are benchmarked against five years of data from their position group, and the charts provide a visual diagnostic of how their testing scores compare to their group.</p>
                     <br>
-                    <h2>Usage</h2>
-                    <h3>Add Data</h3>
-                    <p>This page serves two purposes: users can edit information in existing athlete reports, searchable using the "Saved Athletes" button. Users can also add new athletes to the database. The way the app distinguishes between changes to existing profiles and new profiles is by whether the Name-Position combo in the form currently exists.</p>
                     <br>
-                    <h3>Athlete Report</h3>
-                    <p>This page is for viewing reports from saved athletes. Use the "Saved Athletes" button to select the athlete of interest. The charts will visualize all of his available stats as percentiles within his position group. Hover over individual bars to reveal exact percentiles and position-group median values.</p>
-                    <br>
-                    <h2>Technical notes</h2>
-                    <p>tbd</p>
-                    <br>
-                    <p>Penn Football stat dashboard v0</p>
-                    <p>Update: March 9, 2025</p>
                 </div>
             </div>
+
+            <div class="chart-area">
+                <div class="chart-grid">
+                    <div id="radar-chart">radar</div>
+                    <div id="anthropometrics-chart" class="pct-chart">anthro</div>
+                    <div id="strength-chart" class="pct-chart">strength</div>
+                    <div id="power-chart" class="pct-chart">power</div>
+                    <div id="speed-chart" class="pct-chart">speed</div>
+                    <div id="agility-chart" class="pct-chart">agility</div>
+                </div>
+                <p>Charts visualize athletes' percentiles for each stat within their position groups. For example, 80th
+                    percentile indicates that an athlete scored better in a stat than 80% of his position group. The
+                    number above each bar is the absolute value of each stat. Hover over each bar to see the position
+                    group median and the athlete's percentile.</p>
+            </div>
+        </div>
+
+        <!-- Add athlete -->
+        <div id="Add" class="tabcontent">
+            <div id="stats-page">
+                <div id="stats-instructions">
+                    <h2>Add new athlete</h2>
+                    <p>To add a new athlete to the database, enter his Name, Position, Year, and Number to the right.
+                        The minimum fields needed to create a profile are: Name, Position, and Year. Click the "Save
+                        Athlete" button once you are done. You can use the "Clear Stats" button or refresh the page to
+                        start over.</p>
+                    <br>
+                    <h2>Edit saved athlete</h2>
+                    <p>To edit a saved athlete, click "Saved Athletes" to pull up his profile. Note: if you change the
+                        athlete's Name or Year, you will create a new profile. Once you are satisfied with your changes,
+                        click "Save Athlete".</p>
+                    <br>
+                    <div class="dropdown" id="dropdown-container-1">
+                        <button class="dropbtn" id="load-athletes-1">Saved Athletes</button>
+                        <div id="myDropdown-1" class="dropdown-content">
+                            <input type="text" placeholder="Search.." id="myInput-1">
+                            <ul id="athlete-list-1"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="stats">
+                    <div id="bio">
+                        <input type="text" id="name-input" value="Name" title="Name">
+                        <div id="position-input" title="Position">DB</div>
+                        <select id="status-input" title="Year">
+                            <option value="HS">HS</option>
+                            <option value="FR">FR</option>
+                            <option value="SO" selected>SO</option>
+                            <option value="JR">JR</option>
+                            <option value="SE">SE</option>
+                        </select>
+                        <input type="text" id="number-input" value="#" title="Number">
+                    </div>
+                    <fieldset id="stat-entry">
+                        <ul id="stats-list">
+                            <li>
+                                <label for="bench-stat">Bench</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="bench-stat" class="stat-input" name="bench"
+                                        aria-label="Bench press weight">
+                                    <span class="unit">pounds</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="wingspan-stat">Wingspan</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="wingspan-stat" class="stat-input" name="wingspan"
+                                        aria-label="Wingspan measurement in inches">
+                                    <span class="unit">inches</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div id="fieldset-buttons">
+                            <button id="save-athlete" aria-label="Save athlete to database">SAVE ATHLETE</button>
+                            <button id="clear-all" aria-label="Clear all athlete data">CLEAR STATS</button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compare Athletes -->
+        <div id="Comp" class="tabcontent">
+            <table id="comparison-table" class="comparison-table">
+                <tr class="comp-header-row">
+                    <th class="comp-label-cell"></th>
+                    <th class="comp-name" id="athlete-1-name">Pick Athlete 1</th>
+                    <th class="comp-name" id="athlete-2-name">Pick Athlete 2</th>
+                </tr>
+                <tr class="comp-role-row">
+                    <th class="comp-label-cell"></th>
+                    <td class="comp-role" id="athlete-1-role">Defensive Back</td>
+                    <td class="comp-role" id="athlete-2-role">Defensive Back</td>
+                </tr>
+                <tr class="comp-year-row">
+                    <td class="comp-label-cell"></td>
+                    <td class="comp-year" id="athlete-1-year">Sophomore</td>
+                    <td class="comp-year" id="athlete-2-year">Junior</td>
+                </tr>
+                <tr class="comp-rsi-row">
+                    <td class="comp-label-cell"></td>
+                    <td class="comp-rsi" id="athlete-1-rsi">RSI: 3.3</td>
+                    <td class="comp-rsi" id="athlete-2-rsi">RSI: 2.9</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Squat</th>
+                    <td class="comp-stat" id="athlete-1-squat">500</td>
+                    <td class="comp-stat" id="athlete-2-squat">499</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Bench</th>
+                    <td class="comp-stat" id="athlete-1-bench">300</td>
+                    <td class="comp-stat" id="athlete-2-bench">299</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>225-lb Bench</th>
+                    <td class="comp-stat" id="athlete-1-bench-rep">12</td>
+                    <td class="comp-stat" id="athlete-2-bench-rep">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>10-Yard Sprint</th>
+                    <td class="comp-stat" id="athlete-1-sprint-10">1</td>
+                    <td class="comp-stat" id="athlete-2-sprint-10">1</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Flying 10</th>
+                    <td class="comp-stat" id="athlete-1-flying-10">12</td>
+                    <td class="comp-stat" id="athlete-2-flying-10">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Pro Agility</th>
+                    <td class="comp-stat" id="athlete-1-pro-agility">12</td>
+                    <td class="comp-stat" id="athlete-2-pro-agility">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>L-drill</th>
+                    <td class="comp-stat" id="athlete-1-ldrill">12</td>
+                    <td class="comp-stat" id="athlete-2-ldrill">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>60-Yard Shuttle</th>
+                    <td class="comp-stat" id="athlete-1-shuttle">12</td>
+                    <td class="comp-stat" id="athlete-2-shuttle">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Vertical Jump</th>
+                    <td class="comp-stat" id="athlete-1-vert">12</td>
+                    <td class="comp-stat" id="athlete-2-vert">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Broad Jump</th>
+                    <td class="comp-stat" id="athlete-1-broad">12</td>
+                    <td class="comp-stat" id="athlete-2-broad">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Hang Clean</th>
+                    <td class="comp-stat" id="athlete-1-hang-clean">12</td>
+                    <td class="comp-stat" id="athlete-2-hang-clean">13</td>
+                </tr>
+                <tr class="comp-stat-row">
+                    <th>Power Clean</th>
+                    <td class="comp-stat" id="athlete-1-power-clean">12</td>
+                    <td class="comp-stat" id="athlete-2-power-clean">13</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <!-- About -->
+        <div id="About" class="tabcontent">
+            <div id="About-text">
+                <h2>Overview</h2>
+                <p>This tool is designed to visualize athletes' physical attributes and off-field performance metrics.
+                    Athletes are benchmarked against five years of data from their position group, and the charts
+                    provide a visual diagnostic of how their testing scores compare to their group.</p>
+                <br>
+                <h2>Usage</h2>
+                <h3>Add Data</h3>
+                <p>This page serves two purposes: users can edit information in existing athlete reports, searchable
+                    using the "Saved Athletes" button. Users can also add new athletes to the database. The way the app
+                    distinguishes between changes to existing profiles and new profiles is by whether the Name-Position
+                    combo in the form currently exists.</p>
+                <br>
+                <h3>Athlete Report</h3>
+                <p>This page is for viewing reports from saved athletes. Use the "Saved Athletes" button to select the
+                    athlete of interest. The charts will visualize all of his available stats as percentiles within his
+                    position group. Hover over individual bars to reveal exact percentiles and position-group median
+                    values.</p>
+                <br>
+                <h2>Technical notes</h2>
+                <p>tbd</p>
+                <br>
+                <p>Penn Football stat dashboard v0</p>
+                <p>Update: March 9, 2025</p>
+            </div>
+        </div>
     </div>
 
     <script type="module"> import bb from 'https://cdn.jsdelivr.net/npm/billboard.js@3.14.0/+esm'; </script>
-          
+
     <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
@@ -227,5 +255,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    </body>
+</body>
+
 </html>
