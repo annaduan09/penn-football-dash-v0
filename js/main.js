@@ -14,10 +14,12 @@ import { openTab } from "./open_tab.js";
 document.addEventListener("DOMContentLoaded", () => {
   const btnAdd = document.getElementById("btnAdd");
   const btnMain = document.getElementById("btnMain");
+  const btnComp = document.getElementById("btnComp");
   const btnAbout = document.getElementById("btnAbout");
 
   btnAdd.addEventListener("click", (evt) => openTab("Add", evt.currentTarget));
   btnMain.addEventListener("click", (evt) => openTab("main", evt.currentTarget));
+  btnComp.addEventListener("click", (evt) => openTab("Comp", evt.currentTarget));
   btnAbout.addEventListener("click", (evt) => openTab("About", evt.currentTarget));
 
   openTab("main", btnMain);
