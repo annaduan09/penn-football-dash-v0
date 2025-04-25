@@ -46,7 +46,6 @@ async function addAthleteReport(data) {
       'Position': data.Position,
       'Status': data.Status,
       'Number': data.Number,
-      'Notes': data.Notes,
       'Weight': data.Weight,
       'Height': data.Height,
       'Wingspan': data.Wingspan,

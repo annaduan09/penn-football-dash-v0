@@ -7,7 +7,6 @@ function collectAthleteData() {
   data.Position = document.querySelector('#position-input select').value.trim();
   data.Status = document.getElementById('status-input').value.trim();
   data.Number = document.getElementById('number-input').value.trim();
-  data.Notes = document.getElementById('coach-notes').value.trim();
 
   document.querySelectorAll('[id^="stat-entry-"]').forEach((input) => {
     data[input.name] = input.value ? parseFloat(input.value) : null;
@@ -40,13 +39,13 @@ function toggleDropdownVisibility(el) {
   el.classList.toggle('visible');
 }
 
+
 function populateAthleteFields(athleteData) {
 
   // Populate demographics
   document.getElementById('name-input').value = athleteData.Name || '';                 // Inputs
   document.getElementById('number-input').value = athleteData.Number || '';
   document.getElementById('status-input').value = athleteData.Status || '';
-  document.getElementById('coach-notes').value = athleteData.Notes || '';
 
   document.getElementById('name-display').textContent = athleteData.Name || '';         // Displays
   document.getElementById('number-display').textContent = athleteData.Number || '';
