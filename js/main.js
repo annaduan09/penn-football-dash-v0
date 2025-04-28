@@ -95,9 +95,19 @@ document.getElementById('load-athletes-1').addEventListener('click', function() 
   loadAthleteDropdown('athlete-list-1', 'myDropdown-1');
 });
 
+document.getElementById('load-athletes-2').addEventListener('click', function() {
+  loadAthleteDropdown('athlete-list-2', 'myDropdown-2');
+});
+
+document.getElementById('load-athletes-3').addEventListener('click', function() {
+  loadAthleteDropdown('athlete-list-3', 'myDropdown-3');
+});
+
 // Enable athlete selection from dropdown
 setupAthleteSelectionListener('athlete-list', 'myDropdown', 'dropdown-container');
 setupAthleteSelectionListener('athlete-list-1', 'myDropdown-1', 'dropdown-container-1');
+setupAthleteSelectionListener('athlete-list-2', 'myDropdown-2', 'dropdown-container-2');
+setupAthleteSelectionListener('athlete-list-3', 'myDropdown-3', 'dropdown-container-3');
 
 // Save/update athlete data
 document.getElementById('save-athlete').addEventListener('click', () => {

@@ -142,8 +142,6 @@ function calculateChartData(indivStats, events) {
       }
     }
     positionStatsValues = positionStatsValues.map((statArray) => statArray.flat(1));
-
-
     getRSI();
     getMedians();
     getPercentiles();

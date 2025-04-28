@@ -131,7 +131,9 @@ body {
 
 
 #myInput,
-#myInput-1 {
+#myInput-1,
+#myInput-2,
+#myInput-3 {
   width: 100%;
   box-sizing: border-box;
   font-size: 1rem;
@@ -141,7 +143,9 @@ body {
 }
 
 #myInput:focus,
-#myInput-1:focus {
+#myInput-1:focus,
+#myInput-2:focus,
+#myInput-3:focus {
   outline: 0.5rem solid #ddd;
 }
 
@@ -154,8 +158,7 @@ body {
   margin-left: auto;
 }
 
-.dropdown-content,
-.dropdown-content-1 {
+.dropdown-content {
   display: none;
   position: absolute;
   background-color: #f6f6f6;
@@ -166,8 +169,7 @@ body {
   overflow-y: auto;
 }
 
-.dropdown-content li,
-.dropdown-content-1 li {
+.dropdown-content li {
   padding: 1vw 1vw;
   text-decoration: none;
   display: block;
@@ -369,6 +371,9 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 
 /* Compare Athletes page  */
 
+#comp-banner {
+  display: flex;
+}
 /* Table wrapper styling */
 #comparison-table-wrapper {
   display: flex;
@@ -407,8 +412,8 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 }
 
 /* Role row – slightly softer */
-#athlete-1-role,
-#athlete-2-role {
+#athlete-1-position,
+#athlete-2-position {
   font-size: 1.3rem;
   font-weight: 500;
   color: #555;

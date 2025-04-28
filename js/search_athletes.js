@@ -11,33 +11,27 @@ function filterFunction(input, dropdown) {
   }
 }
 
+// load dropdowns
 document.addEventListener("DOMContentLoaded", () => {
-  const inputEl = document.getElementById("myInput");
-  const dropdownEl = document.getElementById("myDropdown");
+  const dropdownPairs = [
+    { inputId: "myInput", dropdownId: "myDropdown", pageName: "chart page" },
+    { inputId: "myInput-1", dropdownId: "myDropdown-1", pageName: "stat page" },
+    { inputId: "myInput-2", dropdownId: "myDropdown-2", pageName: "page 2" },
+    { inputId: "myInput-3", dropdownId: "myDropdown-3", pageName: "page 3" }
+  ];
 
-  console.log(inputEl);
-  console.log(inputEl.value);
+  dropdownPairs.forEach(({ inputId, dropdownId, pageName }) => {
+    const inputEl = document.getElementById(inputId);
+    const dropdownEl = document.getElementById(dropdownId);
 
-  const inputEl1 = document.getElementById("myInput-1");
-  const dropdownEl1 = document.getElementById("myDropdown-1");
-
-  console.log(inputEl1);
-  console.log(inputEl1.value);
-
-  if (inputEl && dropdownEl) {
-  inputEl.addEventListener("keyup", () => {
-    console.log("chart page");
-    filterFunction(inputEl, dropdownEl);
-  })
-  };
-
-  if (inputEl1 && dropdownEl1) {
-  inputEl1.addEventListener("keyup", () => {
-    console.log("stat page");
-    filterFunction(inputEl1, dropdownEl1);
-  })
-};
-
+    if (inputEl && dropdownEl) {
+      inputEl.addEventListener("keyup", () => {
+        console.log(pageName);
+        filterFunction(inputEl, dropdownEl);
+      });
+    }
+  });
 });
+
 
   export { filterFunction };
