@@ -198,10 +198,7 @@ function initStatEntry(statListEl, positionDropdownEl, stats, positions, events)
   /* Event Handlers */
   function handlePositionChange(evt) {
     const selectedPosition = evt.target.value;
-    const coachNotesField = document.querySelector(`#coach-notes`);
-    if (positionNotes[selectedPosition]) {
-      coachNotesField.value = positionNotes[selectedPosition];
-    }
+    
     events.dispatchEvent(new CustomEvent(`positionSelected`, { detail: { position: selectedPosition } }));
   }
 

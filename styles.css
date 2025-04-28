@@ -373,6 +373,8 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 
 #comp-banner {
   display: flex;
+  justify-content: center;
+  gap: 3vw;
 }
 /* Table wrapper styling */
 #comparison-table-wrapper {
@@ -408,6 +410,7 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
   font-weight: 700;
   text-align: left;
   color: #1c1c1e;
+  text-transform: uppercase;
   letter-spacing: -0.5px;
 }
 

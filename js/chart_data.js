@@ -166,4 +166,4 @@ function calculateChartData(indivStats, events) {
   };
 }
 
-export { calculateChartData };
+export { calculateChartData};

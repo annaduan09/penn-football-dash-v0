@@ -23,9 +23,9 @@ window.getDocs = getDocs;
 
 // Add an athlete to Firestore
 async function addAthleteReport(data) {
-  if (!data || data.Name == 'Athlete Name' || !data.Status || !data.Position) {
+  if (!data || data.Name == 'Athlete Name' || !data.Position) {
     Toastify({
-      text: 'Save failed: Missing required information (Name, Status, Position).',
+      text: 'Save failed: Missing required information (Name, Position).',
       duration: 5000,
       gravity: 'top',
       position: 'center',
@@ -35,7 +35,7 @@ async function addAthleteReport(data) {
   }
 
 
-  const athleteID = `${data.Name}-${data.Status}-${data.Position}`
+  const athleteID = `${data.Name}-${data.Position}`
     .replace(/\s+/g, '')
     .toLowerCase();
 

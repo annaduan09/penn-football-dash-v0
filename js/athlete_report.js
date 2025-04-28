@@ -42,7 +42,7 @@ function toggleDropdownVisibility(el) {
 function populateEntryPage(athleteData) {
 
   // Populate demographics
-  document.getElementById('name-input').value = athleteData.Name || '';                 // Inputs
+  document.getElementById('name-input').value = athleteData.Name || '';             
   document.getElementById('number-input').value = athleteData.Number || '';
   document.getElementById('status-input').value = athleteData.Status || '';
 
@@ -55,22 +55,6 @@ function populateEntryPage(athleteData) {
       input.dispatchEvent(new Event('input'));
     }
   });
-
-/*   // Resize demographic inputs
-  const inputsToResize = ['#name-input', '#number-input', '#status-input'];
-  inputsToResize.forEach((selector) => {
-    const input = document.querySelector(selector);
-    if (input) {
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      const font = window.getComputedStyle(input).font;
-      context.font = font;
-      const textWidth = context.measureText(input.value || '').width;
-      const padding = 15;
-      const minWidth = 50;
-      input.style.width = `${Math.max(textWidth + padding, minWidth)}px`;
-    }
-  }); */
 }
 
 
@@ -78,7 +62,7 @@ function populateEntryPage(athleteData) {
 function populateChartPage(athleteData) {
 
   // Populate demographics
-  document.getElementById('name-display').textContent = athleteData.Name || '';         // Displays
+  document.getElementById('name-display').textContent = athleteData.Name || '';        
   document.getElementById('number-display').textContent = athleteData.Number || '';
   document.getElementById('status-display').textContent = athleteData.Status || '';
 
@@ -109,7 +93,6 @@ function populateChartPage(athleteData) {
 }
 
 
-
 // comparison page
 function populateComparePage(athleteData, num) {
 
@@ -117,6 +100,7 @@ function populateComparePage(athleteData, num) {
   document.getElementById('athlete-' + num + '-name').textContent = athleteData.Name || '';         // Displays
   document.getElementById('athlete-' + num + '-year').textContent = athleteData.Status || '';
 // rsi
+
 
   // Populate stat fields
   const prefix = `athlete-` + num + "-";
@@ -128,6 +112,23 @@ function populateComparePage(athleteData, num) {
       element.textContent = athleteData[statName] !== null ? athleteData[statName] : '';
     }
   });
+
+// Get RSI
+let squat1 = Number(document.getElementById('athlete-1-Squat').textContent);
+let bench1 = Number(document.getElementById('athlete-1-Bench').textContent);
+let weight1 = Number(document.getElementById('athlete-1-Weight').textContent);
+
+
+
+let squat2 = Number(document.getElementById('athlete-2-Squat').textContent);
+let bench2 = Number(document.getElementById('athlete-2-Bench').textContent);
+let weight2 = Number(document.getElementById('athlete-2-Weight').textContent);
+
+let rsi1 = weight1 ? ((squat1 + bench1) / (weight1 * 2)).toFixed(2) : '';
+let rsi2 = weight2 ? ((squat2 + bench2) / (weight2 * 2)).toFixed(2) : '';
+
+document.getElementById('athlete-1-rsi').textContent = "RSI: " + rsi1 || '';
+document.getElementById('athlete-2-rsi').textContent = "RSI: " + rsi2 || '';
 }
 
 function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) {
@@ -156,6 +157,7 @@ function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) 
       if (dropdownEl == "myDropdown") {
         populateChartPage(athleteData);
         populateEntryPage(athleteData);
+        
       } else if (dropdownEl == "myDropdown-1") {
         populateEntryPage(athleteData);
       } else if (dropdownEl == "myDropdown-2") {
