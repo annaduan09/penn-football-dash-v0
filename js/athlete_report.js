@@ -98,6 +98,7 @@ function populateComparePage(athleteData, num) {
 
   // Populate demographics
   document.getElementById('athlete-' + num + '-name').textContent = athleteData.Name || '';         // Displays
+  document.getElementById('athlete-' + num + '-position').textContent = athleteData.Position || '';
   document.getElementById('athlete-' + num + '-year').textContent = athleteData.Status || '';
 // rsi
 
