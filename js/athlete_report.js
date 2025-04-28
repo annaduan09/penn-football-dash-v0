@@ -118,8 +118,6 @@ let squat1 = Number(document.getElementById('athlete-1-Squat').textContent);
 let bench1 = Number(document.getElementById('athlete-1-Bench').textContent);
 let weight1 = Number(document.getElementById('athlete-1-Weight').textContent);
 
-
-
 let squat2 = Number(document.getElementById('athlete-2-Squat').textContent);
 let bench2 = Number(document.getElementById('athlete-2-Bench').textContent);
 let weight2 = Number(document.getElementById('athlete-2-Weight').textContent);
