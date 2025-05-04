@@ -22,7 +22,7 @@ function initRadar(radarEl, categoryPercentiles) {
 
   radarInstances[radarEl.id] = bb.generate({
     title: {
-      text: "Player Profile",
+      text: "",
     },
     data: {
       x: 'x',
