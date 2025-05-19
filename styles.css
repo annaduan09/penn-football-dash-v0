@@ -105,9 +105,19 @@ body {
   box-shadow: none;
 }
 
-.chart-area>p {
-  padding-left: 1.5rem;
-  align-self: flex-end;
+#chart-area-left {
+display: flex;
+flex-direction: column;
+gap: 1vw;
+padding: 1vw;
+padding-top: 0;
+height: 100%;
+width: 100%;
+}
+
+#chart-area-left>img {
+  height: 40vh;
+  width: 40vh;
 }
 
 /* Athlete search/dropdown */
@@ -408,7 +418,7 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 .comp-header-row th,
 .comp-role-row td,
 .comp-year-row td,
-.comp-rsi-row td {
+.comp-TSA-row td {
   background: transparent;
   border: none;
 }
@@ -440,9 +450,9 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
   color: #333;
 }
 
-/* RSI row – styled like a footnote or secondary stat */
-#athlete-1-rsi,
-#athlete-2-rsi {
+/* TSA row – styled like a footnote or secondary stat */
+#athlete-1-TSA,
+#athlete-2-TSA {
   font-size: 0.95rem;
   font-style: italic;
   color: #666;
@@ -550,7 +560,7 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
 
 
 /* Smaller screen media queries */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 900px) {
   .chart-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

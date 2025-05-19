@@ -35,7 +35,7 @@
                 <h1 id="position-display"></h1>
                 <h1 id="status-display"></h1>
                 <h1 id="number-display"></h1>
-                <h1 id="rsi-display"></h1>
+                <h1 id="TSA-display"></h1>
                 <div class="dropdown" id="dropdown-container">
                     <button class="dropbtn" id="load-athletes">Pick Athlete</button>
                     <div id="myDropdown" class="dropdown-content">
@@ -48,6 +48,13 @@
             </div>
 
             <div class="chart-area">
+                <div id="chart-area-left">
+                    <img src="www/headshots/empty.jpg" alt="Athlete headshot" id="headshot-main" class="headshot">
+                    <p>Charts visualize athletes' percentiles for each stat within their position groups. For example, 80th
+                        percentile indicates that an athlete scored better in a stat than 80% of his position group. The
+                        number above each bar is the absolute value of each stat. Hover over each bar to see the position
+                        group median and the athlete's percentile.</p>
+                </div>
                 <div class="chart-grid">
                     <div id="anthropometrics-chart" class="pct-chart"></div>
                     <div id="strength-chart" class="pct-chart"></div>
@@ -56,10 +63,6 @@
                     <div id="agility-chart" class="pct-chart"></div>
                     <div id="radar-chart"></div>
                 </div>
-                <p>Charts visualize athletes' percentiles for each stat within their position groups. For example, 80th
-                    percentile indicates that an athlete scored better in a stat than 80% of his position group. The
-                    number above each bar is the absolute value of each stat. Hover over each bar to see the position
-                    group median and the athlete's percentile.</p>
             </div>
         </div>
 
@@ -192,10 +195,10 @@
                     <td class="comp-weight" id="athlete-1-Weight">Weight</td>
                     <td class="comp-weight" id="athlete-2-Weight">Weight</td>
                 </tr>
-                <tr class="comp-rsi-row">
+                <tr class="comp-TSA-row">
                     <td class="comp-label-cell"></td>
-                    <td class="comp-rsi" id="athlete-1-rsi">RSI</td>
-                    <td class="comp-rsi" id="athlete-2-rsi">RSI</td>
+                    <td class="comp-TSA" id="athlete-1-TSA">TSA</td>
+                    <td class="comp-TSA" id="athlete-2-TSA">TSA</td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Squat</th>

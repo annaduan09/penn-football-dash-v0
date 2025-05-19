@@ -100,7 +100,7 @@ function populateComparePage(athleteData, num) {
   document.getElementById('athlete-' + num + '-name').textContent = athleteData.Name || '';         // Displays
   document.getElementById('athlete-' + num + '-position').textContent = athleteData.Position || '';
   document.getElementById('athlete-' + num + '-year').textContent = athleteData.Status || '';
-// rsi
+// TSA
 
 
   // Populate stat fields
@@ -114,7 +114,7 @@ function populateComparePage(athleteData, num) {
     }
   });
 
-// Get RSI
+// Get TSA
 let squat1 = Number(document.getElementById('athlete-1-Squat').textContent);
 let bench1 = Number(document.getElementById('athlete-1-Bench').textContent);
 let weight1 = Number(document.getElementById('athlete-1-Weight').textContent);
@@ -123,11 +123,11 @@ let squat2 = Number(document.getElementById('athlete-2-Squat').textContent);
 let bench2 = Number(document.getElementById('athlete-2-Bench').textContent);
 let weight2 = Number(document.getElementById('athlete-2-Weight').textContent);
 
-let rsi1 = weight1 ? ((squat1 + bench1) / (weight1 * 2)).toFixed(2) : '';
-let rsi2 = weight2 ? ((squat2 + bench2) / (weight2 * 2)).toFixed(2) : '';
+let TSA1 = weight1 ? ((squat1 + bench1) / (weight1 * 2)).toFixed(2) : '';
+let TSA2 = weight2 ? ((squat2 + bench2) / (weight2 * 2)).toFixed(2) : '';
 
-document.getElementById('athlete-1-rsi').textContent = "RSI: " + rsi1 || '';
-document.getElementById('athlete-2-rsi').textContent = "RSI: " + rsi2 || '';
+document.getElementById('athlete-1-TSA').textContent = "TSA: " + TSA1 || '';
+document.getElementById('athlete-2-TSA').textContent = "TSA: " + TSA2 || '';
 }
 
 function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) {
