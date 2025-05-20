@@ -156,10 +156,12 @@ function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) 
         populateChartPage(athleteData);
         populateEntryPage(athleteData);
         updateHeadshot(athleteData.Name, document.getElementById("headshot-main"));
+        updateHeadshot(athleteData.Name, document.getElementById("headshot-add"));
         
       } else if (dropdownEl == "dropdown-add") {
         populateEntryPage(athleteData);
         updateHeadshot(athleteData.Name, document.getElementById("headshot-add"));
+        updateHeadshot(athleteData.Name, document.getElementById("headshot-main"));
       } else if (dropdownEl == "dropdown-comp-1") {
         populateComparePage(athleteData, 1);
       } else {

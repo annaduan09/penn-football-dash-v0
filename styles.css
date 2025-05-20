@@ -102,7 +102,7 @@ body {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-self: center;
+  justify-self: left;
 }
 
 #banner-main {
@@ -115,6 +115,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: top;
+  gap: 0.5rem;
 }
 
 #number-display {
@@ -249,6 +250,11 @@ body {
   border-radius: 0.5rem;
   padding: 0.2rem;
   background-color: transparent;
+  font-size: 1.5rem;
+}
+
+#name-input {
+  font-size: 2rem;
 }
 
 #name-input:hover,
@@ -457,6 +463,7 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 /* Name row – like a title */
 #athlete-1-name,
 #athlete-2-name {
+  font-size: 1.5rem;
   text-align: left;
   letter-spacing: -0.5px;
   width: 30vw;
