@@ -1,4 +1,4 @@
-/* Big components */
+/* Common components */
 
 html {
   background-color: rgb(255, 255, 255);
@@ -47,7 +47,7 @@ body {
   outline: none;
   cursor: pointer;
   padding: 1vw 1vw;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   width: 25%;
 }
@@ -63,10 +63,46 @@ body {
   padding: 2vw 2vw;
 }
 
-/* Chart page */
-#main {
-  grid-area: main;
+.headshot-div {
+  padding: 1vh;
+  background-color: #ffffff;
+  border: 1px solid #9e9ca1;
+  width: 30vh;
+  box-sizing: border-box;
+}
+
+.headshot {
+  width: 100%;
   height: 100%;
+  object-fit: contain;
+}
+
+.name {
+  text-transform: capitalize;
+  font-weight: bolder;
+  width: auto !important;
+  box-sizing: border-box !important;
+}
+
+
+/* Chart page */
+#main-container {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+#main-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#main-right{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
 }
 
 #banner-main {
@@ -75,8 +111,16 @@ body {
   gap: 1rem;
 }
 
-#banner-main-left{
-  font-size: 5.5rem;
+#banner-main-primary {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+
+#number-display {
+  padding: 0.25rem;
+  color: white;
+  background: #a01414;
 }
 
 #banner-main-secondary{
@@ -84,53 +128,18 @@ body {
   flex-direction: row;
   font-size: 1.6rem;
   font-weight: 100;
-  padding: 0.2rem;
   gap: 1rem;
 }
 
-
-.chart-area {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-} 
-
-#chart-area-left {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 1rem;
-  }
-  
-  .headshot-div {
-    padding: 1vh;
-    background-color: #ffffff;
-    border: 1px solid #9e9ca1;
-    width: 30vh;
-    box-sizing: border-box;
-  }
-  
-  .headshot {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-
-.chart-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1vw;
-}
-
-.chart-grid> div {
+#main-right > div {
   background-color: white;
-  max-width: 22vw;
-  height: 30vh;
+  max-width: 20vw;
+  height: 35vh;
   border-radius: 1vw;
-  box-shadow: 0 0 1rem rgba(7, 9, 173, 0.1);
+  box-shadow: 0 0 1rem rgba(7, 10, 173, 0.053);
 }
 
-.chart-grid #radar-chart {
+#main-right #radar-chart {
   border-radius: 0;
   box-shadow: none;
 }
@@ -242,14 +251,6 @@ body {
   background-color: transparent;
 }
 
-.name {
-  text-transform: capitalize;
-  font-size: 2.5rem;
-  font-weight: bolder;
-  width: auto !important;
-  box-sizing: border-box !important;
-}
-
 #name-input:hover,
 #position-input select:hover,
 #status-input:hover,
@@ -279,7 +280,7 @@ ul#stats-list {
   border-color: transparent;
   font-family: Lato, sans-serif;
   list-style-type: none;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.9rem;
 }
 
@@ -370,12 +371,12 @@ rect.bb-event-rect {
 
 
 .bb-title {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-family: Poppins, sans-serif;
   font-weight: 600;
   margin-top: 1em;
-  color: #666;
-  text-transform: titlecase;
+  fill: #1f1f1f;
+  text-transform: uppercase;
 }
 
 
@@ -416,8 +417,7 @@ div#radar-chart .bb-axis-2>text:nth-child(2),
 div#radar-chart .bb-axis-3>text:nth-child(2) {
   font-size: 0.75rem;
   font-family: Poppins, sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 400;
 }
 
 /* Compare Athletes page  */
@@ -581,9 +581,9 @@ div#radar-chart .bb-axis-2 > text:nth-child(2),
 div#radar-chart .bb-axis-3 > text:nth-child(2) {
   font-size: 0.6rem;
   font-family: Poppins, sans-serif;
-  font-weight: 600;
-  text-transform: lowercase;
-  text-align: center;
+  font-weight: 400;
+  align-self: center;
+  justify-self: center;
 }
 
 
@@ -630,7 +630,7 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
     border-color: transparent;
     font-family: Lato, sans-serif;
     list-style-type: none;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.9rem;
   }
 

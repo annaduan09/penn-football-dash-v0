@@ -48,7 +48,6 @@ function initBar(barEl, positionMedians, statNames, playerStats, playerPercentil
 
   const colors = getColor(filteredPlayerPercentiles);
 
-  // eslint-disable-next-line no-undef
   barInstances[barEl.id] = bb.generate({
     title: {
       text: category.charAt(0).toUpperCase() + category.slice(1),
@@ -94,7 +93,7 @@ function initBar(barEl, positionMedians, statNames, playerStats, playerPercentil
       },
       y: {
         show: false,
-        max: 110,
+        max: 115,
         padding: {
           top: 0,
           bottom: 0,
