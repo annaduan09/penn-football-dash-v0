@@ -88,11 +88,11 @@ events.addEventListener('positionSelected', renderCharts);
 
 // Load athletes
 document.getElementById('load-athletes').addEventListener('click', function() {
-  loadAthleteDropdown('athlete-list', 'dropdown-main');
+  loadAthleteDropdown('athlete-list-main', 'dropdown-main');
 });
 
 document.getElementById('load-athletes-1').addEventListener('click', function() {
-  loadAthleteDropdown('athlete-list-1', 'dropdown-add');
+  loadAthleteDropdown('athlete-list-add', 'dropdown-add');
 });
 
 document.getElementById('load-athletes-comp-1').addEventListener('click', function() {
@@ -104,8 +104,8 @@ document.getElementById('load-athletes-comp-2').addEventListener('click', functi
 });
 
 // Enable athlete selection from dropdown
-setupAthleteSelectionListener('athlete-list', 'dropdown-main', 'dropdown-container');
-setupAthleteSelectionListener('athlete-list-1', 'dropdown-add', 'dropdown-container-add');
+setupAthleteSelectionListener('athlete-list-main', 'dropdown-main', 'dropdown-container');
+setupAthleteSelectionListener('athlete-list-add', 'dropdown-add', 'dropdown-container-add');
 setupAthleteSelectionListener('athlete-list-comp-1', 'dropdown-comp-1', 'dropdown-container-comp-1');
 setupAthleteSelectionListener('athlete-list-comp-2', 'dropdown-comp-2', 'dropdown-container-comp-2');
 

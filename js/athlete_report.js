@@ -25,7 +25,7 @@ async function loadAthleteDropdown(listEl, dropdownEl) {
 
     athletes.forEach((athlete) => {
       const listItem = document.createElement('li');
-      listItem.textContent = `${athlete.Name} (${athlete.Position}) - ${athlete.Status}`;
+      listItem.textContent = `${athlete.Name} - ${athlete.Position} - ${athlete.Status}`;
       listItem.dataset.athlete = JSON.stringify(athlete);
       listItem.classList.add('athlete-item');
       athleteList.appendChild(listItem);

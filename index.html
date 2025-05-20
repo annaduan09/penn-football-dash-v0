@@ -30,44 +30,47 @@
 
         <!-- Main page (charts) -->
         <div id="main" class="tabcontent">
-            <div id="banner-main">
-                <div id="banner-main-left">
-                    <h4 id="number-display">#</h4>
+            <div id="main-left">
+                <div id="banner-main">
+                    <div id="banner-main-left">
+                        <h4 id="number-display">#</h4>
+                    </div>
+                    <div id="banner-main-right">
+                        <h1 id="name-display" class = "name">athlete name</h1>
+                        <div id="banner-main-secondary">
+                            <p id="position-display">Position</p>
+                            <p id="status-display">Year</p>
+                            <p id="TSA-display">TSA</p>
+                        </div>
+                    </div>
                 </div>
-                <div id="banner-main-right">
-                    <h1 id="name-display" class = "name">athlete name</h1>
-                    <div id="banner-main-secondary">
-                        <p id="position-display">Position</p>
-                        <p id="status-display">Year</p>
-                        <p id="TSA-display">TSA</p>
+                <div class="dropdown" id="dropdown-container">
+                    <button class="dropbtn" id="load-athletes">Pick Athlete</button>
+                    <div id="dropdown-main" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="name-search-main">
+                        <ul id="athlete-list-main"></ul>
                     </div>
                 </div>
             </div>
-            <div class="dropdown" id="dropdown-container">
-                <button class="dropbtn" id="load-athletes">Pick Athlete</button>
-                <div id="dropdown-main" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="name-search-main">
-                    <ul id="athlete-list"></ul>
-                </div>
-            </div>
-
-            <div class="chart-area">
-                <div id="chart-area-left">
-                    <div id="headshot-div-main" class="headshot-div">
-                        <img src="www/headshots/empty.jpg" alt="Athlete headshot" id="headshot-main" class="headshot">
+            <div id="main-right">
+                <div class="chart-area">
+                    <div id="chart-area-left">
+                        <div id="headshot-div-main" class="headshot-div">
+                            <img src="www/headshots/empty.jpg" alt="Athlete headshot" id="headshot-main" class="headshot">
+                        </div>
+                        <p>Charts visualize athletes' percentiles for each stat within their position groups. For example, 80th
+                            percentile indicates that an athlete scored better in a stat than 80% of his position group. The
+                            number above each bar is the absolute value of each stat. Hover over each bar to see the position
+                            group median and the athlete's percentile.</p>
                     </div>
-                    <p>Charts visualize athletes' percentiles for each stat within their position groups. For example, 80th
-                        percentile indicates that an athlete scored better in a stat than 80% of his position group. The
-                        number above each bar is the absolute value of each stat. Hover over each bar to see the position
-                        group median and the athlete's percentile.</p>
-                </div>
-                <div class="chart-grid">
-                    <div id="anthropometrics-chart" class="pct-chart"></div>
-                    <div id="strength-chart" class="pct-chart"></div>
-                    <div id="power-chart" class="pct-chart"></div>
-                    <div id="speed-chart" class="pct-chart"></div>
-                    <div id="agility-chart" class="pct-chart"></div>
-                    <div id="radar-chart"></div>
+                    <div class="chart-grid">
+                        <div id="anthropometrics-chart" class="pct-chart"></div>
+                        <div id="strength-chart" class="pct-chart"></div>
+                        <div id="power-chart" class="pct-chart"></div>
+                        <div id="speed-chart" class="pct-chart"></div>
+                        <div id="agility-chart" class="pct-chart"></div>
+                        <div id="radar-chart"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,7 +101,7 @@
                                 <button class="dropbtn" id="load-athletes-1">Edit Athlete</button>
                                 <div id="dropdown-add" class="dropdown-content">
                                     <input type="text" placeholder="Search.." id="name-search-add">
-                                    <ul id="athlete-list-1"></ul>
+                                    <ul id="athlete-list-add"></ul>
                                 </div>
                         </div>
                     </div>
