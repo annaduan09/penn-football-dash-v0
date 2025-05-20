@@ -8,11 +8,13 @@ export function openTab(tabName, tabEl) {
     tablinks = document.getElementsByClassName("tablink");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].style.backgroundColor = "";
+        tablinks[i].style.color = "";
     }
 
     document.getElementById(tabName).style.display = "block";
 
     tabEl.style.backgroundColor = "#a01414";
+    tabEl.style.color = "white";
 
     if (tabName === "main") {
         const mainEvent = new CustomEvent("mainTabActivated");
