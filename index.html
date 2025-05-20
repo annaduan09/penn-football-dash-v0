@@ -30,20 +30,24 @@
 
         <!-- Main page (charts) -->
         <div id="main" class="tabcontent">
-            <div class="name-banner">
-                <h1 id="name-display">Pick an athlete to start</h1>
-                <h1 id="position-display"></h1>
-                <h1 id="status-display"></h1>
-                <h1 id="number-display"></h1>
-                <h1 id="TSA-display"></h1>
-                <div class="dropdown" id="dropdown-container">
-                    <button class="dropbtn" id="load-athletes">Pick Athlete</button>
-                    <div id="dropdown-main" class="dropdown-content">
-                        <input type="text" placeholder="Search.." id="name-search-main">
-                        <ul id="athlete-list"></ul>
+            <div id="banner-main">
+                <div id="banner-main-left">
+                    <h4 id="number-display">#</h4>
+                </div>
+                <div id="banner-main-right">
+                    <h1 id="name-display" class = "name">athlete name</h1>
+                    <div id="banner-main-secondary">
+                        <p id="position-display">Position</p>
+                        <p id="status-display">Year</p>
+                        <p id="TSA-display">TSA</p>
                     </div>
-                    <br>
-                    <br>
+                </div>
+            </div>
+            <div class="dropdown" id="dropdown-container">
+                <button class="dropbtn" id="load-athletes">Pick Athlete</button>
+                <div id="dropdown-main" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="name-search-main">
+                    <ul id="athlete-list"></ul>
                 </div>
             </div>
 
@@ -78,7 +82,7 @@
                             <img src="www/headshots/empty.jpg" alt="Athlete headshot" id="headshot-add" class="headshot">
                         </div>
                         <div id="bio-add" class="bio">
-                            <input type="text" id="name-input" value="Name" title="Name">
+                            <input type="text" id="name-input" class="name" value="Name" title="Name">
                             <div id="bio-add-secondary">
                                 <div id="position-input" title="Position">DB</div>
                                 <select id="status-input" title="Year">
@@ -149,8 +153,8 @@
             <table id="comparison-table" class="comparison-table">
                 <tr class="comp-header-row">
                     <th class="comp-label-cell"></th>
-                    <th class="comp-name" id="athlete-1-name">Pick Athlete 1</th>
-                    <th class="comp-name" id="athlete-2-name">Pick Athlete 2</th>
+                    <th class="name" id="athlete-1-name">Pick Athlete 1</th>
+                    <th class="name" id="athlete-2-name">Pick Athlete 2</th>
                 </tr>
                 <tr class="comp-button-row">
                     <td class="comp-label-cell"></td>

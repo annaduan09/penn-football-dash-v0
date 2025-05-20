@@ -68,10 +68,23 @@ body {
   height: 100%;
 }
 
-.name-banner{
+#banner-main{
   display: flex;
-  column-gap: 2vw;
-  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#banner-main-left{
+  font-size: 5.5rem;
+}
+
+#banner-main-secondary{
+  display:flex;
+  flex-direction: row;
+  font-size: 1.6rem;
+  font-weight: 100;
+  padding: 0.2rem;
+  gap: 1rem;
 }
 
 #name-input,
@@ -232,10 +245,10 @@ body {
   background-color: transparent;
 }
 
-#name-input {
+.name {
   font-size: 2.5rem;
   font-weight: bolder;
-  width: 100% !important;
+  width: 100%;
   box-sizing: border-box !important;
 }
 
@@ -446,12 +459,10 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 /* Name row – like a title */
 #athlete-1-name,
 #athlete-2-name {
-  font-size: 2rem;
-  font-weight: 700;
   text-align: left;
-  color: #1c1c1e;
   text-transform: uppercase;
   letter-spacing: -0.5px;
+  width: 30vw;
 }
 
 /* Role row – slightly softer */
