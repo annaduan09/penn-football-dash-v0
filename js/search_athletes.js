@@ -14,10 +14,10 @@ function filterFunction(input, dropdown) {
 // load dropdowns
 document.addEventListener("DOMContentLoaded", () => {
   const dropdownPairs = [
-    { inputId: "myInput", dropdownId: "myDropdown", pageName: "chart page" },
-    { inputId: "myInput-1", dropdownId: "myDropdown-1", pageName: "stat page" },
-    { inputId: "myInput-2", dropdownId: "myDropdown-2", pageName: "page 2" },
-    { inputId: "myInput-3", dropdownId: "myDropdown-3", pageName: "page 3" }
+    { inputId: "name-search-main", dropdownId: "dropdown-main", pageName: "chart page" },
+    { inputId: "name-search-add", dropdownId: "dropdown-add", pageName: "stat page" },
+    { inputId: "name-search-comp-1", dropdownId: "dropdown-comp-1", pageName: "page 2" },
+    { inputId: "name-search-comp-2", dropdownId: "dropdown-comp-2", pageName: "page 3" }
   ];
 
   dropdownPairs.forEach(({ inputId, dropdownId, pageName }) => {

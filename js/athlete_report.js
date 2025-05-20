@@ -75,21 +75,19 @@ function populateChartPage(athleteData) {
     positionDropdown.dispatchEvent(new Event('change'));
   }
 
-  // Resize demographic inputs
-  const inputsToResize = ['#name-input', '#number-input', '#status-input'];
-  inputsToResize.forEach((selector) => {
-    const input = document.querySelector(selector);
-    if (input) {
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      const font = window.getComputedStyle(input).font;
-      context.font = font;
-      const textWidth = context.measureText(input.value || '').width;
-      const padding = 15;
-      const minWidth = 50;
-      input.style.width = `${Math.max(textWidth + padding, minWidth)}px`;
-    }
-  });
+}
+
+function updateHeadshot(name, imgElement) {
+  if (!name || !imgElement) return;
+
+  const fileName = name.toLowerCase().replace(/\s+/g, "-") + ".jpg";
+  const imagePath = `www/headshots/${fileName}`;
+
+  imgElement.onerror = () => {
+    imgElement.src = "www/headshots/empty.jpg";
+  };
+
+  imgElement.src = imagePath;
 }
 
 
@@ -100,7 +98,8 @@ function populateComparePage(athleteData, num) {
   document.getElementById('athlete-' + num + '-name').textContent = athleteData.Name || '';         // Displays
   document.getElementById('athlete-' + num + '-position').textContent = athleteData.Position || '';
   document.getElementById('athlete-' + num + '-year').textContent = athleteData.Status || '';
-// TSA
+
+
 
 
   // Populate stat fields
@@ -153,13 +152,15 @@ function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) 
     if (target.classList.contains('athlete-item')) {
       const athleteData = JSON.parse(target.dataset.athlete);
 
-      if (dropdownEl == "myDropdown") {
+      if (dropdownEl == "dropdown-main") {
         populateChartPage(athleteData);
         populateEntryPage(athleteData);
+        updateHeadshot(athleteData.Name, document.getElementById("headshot-main"));
         
-      } else if (dropdownEl == "myDropdown-1") {
+      } else if (dropdownEl == "dropdown-add") {
         populateEntryPage(athleteData);
-      } else if (dropdownEl == "myDropdown-2") {
+        updateHeadshot(athleteData.Name, document.getElementById("headshot-add"));
+      } else if (dropdownEl == "dropdown-comp-1") {
         populateComparePage(athleteData, 1);
       } else {
         populateComparePage(athleteData, 2);
