@@ -87,19 +87,19 @@ events.addEventListener('statFilled', renderCharts);
 events.addEventListener('positionSelected', renderCharts);
 
 // Load athletes
-document.getElementById('load-athletes').addEventListener('click', function() {
+document.getElementById('load-athletes-main').addEventListener('click', function() {
   loadAthleteDropdown('athlete-list-main', 'dropdown-main');
 });
 
-document.getElementById('load-athletes-1').addEventListener('click', function() {
+document.getElementById('load-athletes-add').addEventListener('click', function() {
   loadAthleteDropdown('athlete-list-add', 'dropdown-add');
 });
 
-document.getElementById('load-athletes-comp-1').addEventListener('click', function() {
+document.getElementById('load-athletes-main-comp-1').addEventListener('click', function() {
   loadAthleteDropdown('athlete-list-comp-1', 'dropdown-comp-1');
 });
 
-document.getElementById('load-athletes-comp-2').addEventListener('click', function() {
+document.getElementById('load-athletes-main-comp-2').addEventListener('click', function() {
   loadAthleteDropdown('athlete-list-comp-2', 'dropdown-comp-2');
 });
 
