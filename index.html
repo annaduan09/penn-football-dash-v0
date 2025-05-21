@@ -33,15 +33,15 @@
             <div id="main-container">
                 <div id="main-left">
                     <div id="banner-main">
-                            <div id="banner-main-primary" class="primary">
-                                <h2 id="number-display">#</h2>
-                                <h1 id="name-display" class="name">athlete name</h1>
-                            </div>
-                            <div id="banner-main-secondary">
-                                <p id="position-display">Position</p>
-                                <p id="status-display">Year</p>
-                                <p id="TSA-display">TSA</p>
-                            </div>
+                        <div id="banner-main-primary" class="primary">
+                            <h2 id="number-display">#</h2>
+                            <h1 id="name-display" class="name">athlete name</h1>
+                        </div>
+                        <div id="banner-main-secondary">
+                            <p id="position-display">Position</p>
+                            <p id="status-display">Year</p>
+                            <p id="TSA-display">TSA</p>
+                        </div>
                     </div>
                     <div class="dropdown" id="dropdown-container">
                         <button class="dropbtn" id="load-athletes-main">Pick Athlete</button>
@@ -72,10 +72,15 @@
         <div id="Add" class="tabcontent">
             <div id="stats-container">
                 <div id="stats-left">
-                        <div id="banner-stats" class="bio">
+                    <div id="banner-stats" class="bio">
+                        <div id="headshot-div-add" class="headshot-div">
+                            <img src="www/headshots/empty.png" alt="Athlete headshot" id="headshot-add"
+                                class="headshot">
+                        </div>
+                        <div id="banner-stats-wrapper">
                             <div id="banner-stats-primary">
-                            <input type="text" id="number-input" value="#" title="Number">
-                            <input type="text" id="name-input" class="name" value="Name" title="Name">
+                                <input type="text" id="number-input" value="#" title="Number">
+                                <input type="text" id="name-input" class="name" value="Name" title="Name">
                             </div>
                             <div id="banner-stats-secondary">
                                 <div id="position-input" title="Position">DB</div>
@@ -95,60 +100,58 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="headshot-div-add" class="headshot-div">
-                            <img src="www/headshots/empty.png" alt="Athlete headshot" id="headshot-add"
-                                class="headshot">
-                        </div>
                     </div>
 
-                    <div id="stats-right">
-                        <fieldset id="stat-entry">
-                            <ul id="stats-list">
-                                <li>
-                                    <label for="bench-stat">Bench</label>
-                                    <div class="input-wrapper">
-                                        <input type="number" id="bench-stat" class="stat-input" name="bench"
-                                            aria-label="Bench press weight">
-                                        <span class="unit">pounds</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <label for="wingspan-stat">Wingspan</label>
-                                    <div class="input-wrapper">
-                                        <input type="number" id="wingspan-stat" class="stat-input" name="wingspan"
-                                            aria-label="Wingspan measurement in inches">
-                                        <span class="unit">inches</span>
-                                    </div>
-                                </li>
-                            </ul>
+                    <fieldset id="stat-entry">
+                        <ul id="stats-list">
+                            <li>
+                                <label for="bench-stat">Bench</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="bench-stat" class="stat-input" name="bench"
+                                        aria-label="Bench press weight">
+                                    <span class="unit">pounds</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="wingspan-stat">Wingspan</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="wingspan-stat" class="stat-input" name="wingspan"
+                                        aria-label="Wingspan measurement in inches">
+                                    <span class="unit">inches</span>
+                                </div>
+                            </li>
+                        </ul>
 
-                            <div id="fieldset-buttons">
-                                <button id="save-athlete" aria-label="Save athlete to database">SAVE ATHLETE</button>
-                                <button id="clear-all" aria-label="Clear all athlete data">CLEAR STATS</button>
-                            </div>
-                        </fieldset>
-                        <div id="stats-instructions">
-                            <div id="stats-instructions-add">
-                            <h3>Add new athlete</h3>
-                            <p>To add a new athlete to the database, enter his Name, Position, Year, and Number to the
-                                right.
-                                The minimum fields needed to create a profile are: Name, Position, and Year. Click the
-                                "Save
-                                Athlete" button once you are done. You can use the "Clear Stats" button or refresh the
-                                page to
-                                start over.</p>
-                            </div>
-                            <div id="stats-instructions-edit">
-                            <h3>Edit saved athlete</h3>
-                            <p>To edit a saved athlete, click "Saved Athletes" to pull up his profile. Note: if you
-                                change the
-                                athlete's Name or Year, you will create a new profile. Once you are satisfied with your
-                                changes,
-                                click "Save Athlete".</p>
-                            </div>
+                        <div id="fieldset-buttons">
+                            <button id="save-athlete" aria-label="Save athlete to database">SAVE ATHLETE</button>
+                            <button id="clear-all" aria-label="Clear all athlete data">CLEAR STATS</button>
                         </div>
+                    </fieldset>
+                </div>
+
+            <div id="stats-right">
+                <div id="stats-instructions">
+                    <div id="stats-instructions-add">
+                        <h3>Add new athlete</h3>
+                        <p>To add a new athlete to the database, enter his Name, Position, Year, and Number to the
+                            right.
+                            The minimum fields needed to create a profile are: Name, Position, and Year. Click the
+                            "Save
+                            Athlete" button once you are done. You can use the "Clear Stats" button or refresh the
+                            page to
+                            start over.</p>
+                    </div>
+                    <div id="stats-instructions-edit">
+                        <h3>Edit saved athlete</h3>
+                        <p>To edit a saved athlete, click "Saved Athletes" to pull up his profile. Note: if you
+                            change the
+                            athlete's Name or Year, you will create a new profile. Once you are satisfied with your
+                            changes,
+                            click "Save Athlete".</p>
                     </div>
                 </div>
+            </div>
+        </div>
         </div>
 
         <!-- Compare Athletes -->
