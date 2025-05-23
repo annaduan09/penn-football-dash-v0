@@ -29,7 +29,7 @@
         </div>
 
         <!-- Main page (charts) -->
-        <div id="main" class="tabcontent">
+        <div id="chart" class="tabcontent">
             <div id="main-container">
                 <div id="main-left">
                     <div id="banner-main">
@@ -69,7 +69,7 @@
         </div>
 
         <!-- Add athlete -->
-        <div id="Add" class="tabcontent">
+        <div id="stat" class="tabcontent">
             <div id="stats-container">
                 <div id="stats-left">
                     <div id="banner-stats" class="bio">
@@ -155,22 +155,59 @@
         </div>
 
         <!-- Compare Athletes -->
-        <div id="Comp" class="tabcontent">
+        <div id="comp" class="tabcontent">
 
-            <table id="comparison-table" class="comparison-table">
-                <tr class="comp-header-row">
-                    <th class="comp-label-cell"></th>
-                    <th>
+            <table id="comp-table" class="comp-table">
+                <tr class="comp-primary-row">
+                    <th class="comp-label-header"></th>
+                    <td>
                         <h1 class="name" id="athlete-1-name">
                         Athlete 1
                         </h1>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <h1 class="name" id="athlete-2-name">
                         Athlete 2
                         </h1>
-                    </th>
+                    </td>
                 </tr>
+
+                    
+                <tr class="comp-secondary-row">
+                    <th class="comp-secondary-header"></th>
+                    <td>
+                        <div class="comp-secondary">
+                            <p id="athlete-1-position">Position</p>
+                            <p id="athlete-1-year">Year</p>
+                            <p id="athlete-1-tsa">TSA</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="comp-secondary">
+                            <p id="athlete-2-position">Position</p>
+                            <p id="athlete-2-year">Year</p>
+                            <p id="athlete-2-tsa">TSA</p>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="comp-tertiary-row">
+                    <th class="comp-tertiary-header"></th>
+                    <td>
+                        <div class="comp-tertiary">
+                            <p class="comp-tertiary" id="athlete-1-weight">Weight</p>
+                            <p class="comp-tertiary" id="athlete-1-height">Height</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="comp-tertiary">
+                            <p class="comp-tertiary" id="athlete-2-weight">Weight</p>
+                            <p class="comp-tertiary" id="athlete-2-height">Height</p>
+                        </div>
+                    </td>
+                </tr>
+
+
                 <tr class="comp-button-row">
                     <td class="comp-label-cell"></td>
                     <td>
@@ -196,85 +233,66 @@
                         </div>
                     </td>
                 </tr>
-                <tr class="comp-role-row">
-                    <th class="comp-label-cell"></th>
-                    <td class="comp-role" id="athlete-1-position">Position</td>
-                    <td class="comp-role" id="athlete-2-position">Position</td>
-                </tr>
-                <tr class="comp-year-row">
-                    <td class="comp-label-cell"></td>
-                    <td class="comp-year" id="athlete-1-year">Year</td>
-                    <td class="comp-year" id="athlete-2-year">Year</td>
-                </tr>
-                <tr class="comp-weight-row">
-                    <td class="comp-label-cell"></td>
-                    <td class="comp-weight" id="athlete-1-Weight">Weight</td>
-                    <td class="comp-weight" id="athlete-2-Weight">Weight</td>
-                </tr>
-                <tr class="comp-TSA-row">
-                    <td class="comp-label-cell"></td>
-                    <td class="comp-TSA" id="athlete-1-TSA">TSA</td>
-                    <td class="comp-TSA" id="athlete-2-TSA">TSA</td>
-                </tr>
+
                 <tr class="comp-stat-row">
                     <th>Squat</th>
-                    <td class="comp-stat" id="athlete-1-Squat">500</td>
-                    <td class="comp-stat" id="athlete-2-Squat">499</td>
+                    <td class="comp-stat" id="athlete-1-Squat"></td>
+                    <td class="comp-stat" id="athlete-2-Squat"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Bench</th>
-                    <td class="comp-stat" id="athlete-1-Bench">300</td>
-                    <td class="comp-stat" id="athlete-2-Bench">299</td>
+                    <td class="comp-stat" id="athlete-1-Bench"></td>
+                    <td class="comp-stat" id="athlete-2-Bench"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>225-lb Bench</th>
-                    <td class="comp-stat" id="athlete-1-225lb Bench">12</td>
-                    <td class="comp-stat" id="athlete-2-225lb Bench">13</td>
+                    <td class="comp-stat" id="athlete-1-225lb Bench"></td>
+                    <td class="comp-stat" id="athlete-2-225lb Bench"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>10-Yard Sprint</th>
-                    <td class="comp-stat" id="athlete-1-10Y Sprint">1</td>
-                    <td class="comp-stat" id="athlete-2-10Y Sprint">1</td>
+                    <td class="comp-stat" id="athlete-1-10Y Sprint"></td>
+                    <td class="comp-stat" id="athlete-2-10Y Sprint"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Flying 10</th>
-                    <td class="comp-stat" id="athlete-1-Flying 10">12</td>
-                    <td class="comp-stat" id="athlete-2-Flying 10">13</td>
+                    <td class="comp-stat" id="athlete-1-Flying 10"></td>
+                    <td class="comp-stat" id="athlete-2-Flying 10"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Pro Agility</th>
-                    <td class="comp-stat" id="athlete-1-Pro Agility">12</td>
-                    <td class="comp-stat" id="athlete-2-Pro Agility">13</td>
+                    <td class="comp-stat" id="athlete-1-Pro Agility"></td>
+                    <td class="comp-stat" id="athlete-2-Pro Agility"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>L-drill</th>
-                    <td class="comp-stat" id="athlete-1-L Drill">12</td>
-                    <td class="comp-stat" id="athlete-2-L Drill">13</td>
+                    <td class="comp-stat" id="athlete-1-L Drill"></td>
+                    <td class="comp-stat" id="athlete-2-L Drill"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>60-Yard Shuttle</th>
-                    <td class="comp-stat" id="athlete-1-60Y Shuttle">12</td>
-                    <td class="comp-stat" id="athlete-2-60Y Shuttle">13</td>
+                    <td class="comp-stat" id="athlete-1-60Y Shuttle"></td>
+                    <td class="comp-stat" id="athlete-2-60Y Shuttle"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Vertical Jump</th>
-                    <td class="comp-stat" id="athlete-1-Vertical Jump">12</td>
-                    <td class="comp-stat" id="athlete-2-Vertical Jump">13</td>
+                    <td class="comp-stat" id="athlete-1-Vertical Jump"></td>
+                    <td class="comp-stat" id="athlete-2-Vertical Jump"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Broad Jump</th>
-                    <td class="comp-stat" id="athlete-1-Broad Jump">12</td>
-                    <td class="comp-stat" id="athlete-2-Broad Jump">13</td>
+                    <td class="comp-stat" id="athlete-1-Broad Jump"></td>
+                    <td class="comp-stat" id="athlete-2-Broad Jump"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Hang Clean</th>
-                    <td class="comp-stat" id="athlete-1-Hang Clean">12</td>
-                    <td class="comp-stat" id="athlete-2-Hang Clean">13</td>
+                    <td class="comp-stat" id="athlete-1-Hang Clean"></td>
+                    <td class="comp-stat" id="athlete-2-Hang Clean"></td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Power Clean</th>
-                    <td class="comp-stat" id="athlete-1-Power Clean">12</td>
-                    <td class="comp-stat" id="athlete-2-Power Clean">13</td>
+                    <td class="comp-stat" id="athlete-1-Power Clean"></td>
+                    <td class="comp-stat" id="athlete-2-Power Clean"></td>
                 </tr>
             </table>
         </div>

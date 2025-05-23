@@ -91,7 +91,7 @@ function updateHeadshot(name, imgElement) {
 }
 
 
-// comparison page
+// comp page
 function populateComparePage(athleteData, num) {
 
   // Populate demographics
@@ -116,7 +116,7 @@ function populateComparePage(athleteData, num) {
 // Get TSA
 let squat1 = Number(document.getElementById('athlete-1-Squat').textContent);
 let bench1 = Number(document.getElementById('athlete-1-Bench').textContent);
-let weight1 = Number(document.getElementById('athlete-1-Weight').textContent);
+let weight1 = Number(document.getElementById('athlete-1-weight').textContent);
 
 let squat2 = Number(document.getElementById('athlete-2-Squat').textContent);
 let bench2 = Number(document.getElementById('athlete-2-Bench').textContent);

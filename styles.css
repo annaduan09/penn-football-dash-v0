@@ -130,8 +130,8 @@ body {
   background: #a01414;
 }
 
-#banner-main-secondary{
-  display:flex;
+#banner-main-secondary, #banner-stats-secondary, .comp-secondary {
+  display: flex;
   flex-direction: row;
   font-size: 1.6rem;
   font-weight: 100;
@@ -253,10 +253,6 @@ body {
   gap: 1rem;
 }
 
-#banner-stats-secondary {
-  display: flex;
-  flex-direction: row;
-}
 
 #position-input select,
 #name-input,
@@ -451,76 +447,24 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 
 
 /* Compare Athletes page  */
+#comp-table {
+  width: 100%;
+}
 
-#comp-banner {
+.comp-tertiary {
   display: flex;
-  justify-content: center;
-  gap: 3vw;
-}
-/* Table wrapper styling */
-#comparison-table-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-}
-
-/* General table styling */
-#comparison-table {
-  width: 80%;
-  max-width: 900px;
-  border-collapse: separate;
-  border-spacing: 0 0.8rem;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.95rem;
-  color: #1c1c1e;
-}
-
-/* Header + Info Rows – Banner Style */
-.comp-header-row th,
-.comp-role-row td,
-.comp-year-row td,
-.comp-TSA-row td {
-  background: transparent;
-  border: none;
-}
-
-/* Name row – like a title */
-#athlete-1-name,
-#athlete-2-name {
-  font-size: 1.5rem;
-  text-align: left;
-  letter-spacing: -0.5px;
-  width: 30vw;
-}
-
-/* Role row – slightly softer */
-#athlete-1-position,
-#athlete-2-position {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #555;
-}
-
-/* Year row – strong and neutral */
-#athlete-1-year,
-#athlete-2-year {
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-/* TSA row – styled like a footnote or secondary stat */
-#athlete-1-TSA,
-#athlete-2-TSA {
-  font-size: 0.95rem;
+  flex-direction: row;
+  font-size: 1rem;
+  font-weight: 100;
   font-style: italic;
-  color: #666;
+  gap: 1rem;
 }
+
 
 /* Stat row labels */
 .comp-stat-row th {
   text-align: left;
-  background-color: #f2f2f7;
+  background-color: rgb(230, 230, 230);
   font-weight: 600;
   padding: 0.8rem 1rem;
   border-radius: 1rem 0 0 1rem;
@@ -529,11 +473,10 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 
 /* Stat row data cells */
 .comp-stat {
-  background-color: #ffffff;
   padding: 0.8rem 1rem;
-  border-radius: 0 1rem 1rem 0;
   transition: background 0.2s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
 /* Alternating background */
@@ -542,12 +485,12 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 }
 
 /* Row hover effect */
-.comp-stat:hover {
+.comp-stat:hover, .comp-stat-row:nth-child(even) .comp-stat:hover{
   background-color: #dff0ff;
 }
 
 /* Subtle drop shadow on table */
-#comparison-table {
+#comp-table {
   border-radius: 1.5rem;
   overflow: hidden;
 }

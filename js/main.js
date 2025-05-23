@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnComp = document.getElementById("btnComp");
   const btnAbout = document.getElementById("btnAbout");
 
-  btnAdd.addEventListener("click", (evt) => openTab("Add", evt.currentTarget));
-  btnMain.addEventListener("click", (evt) => openTab("main", evt.currentTarget));
-  btnComp.addEventListener("click", (evt) => openTab("Comp", evt.currentTarget));
+  btnAdd.addEventListener("click", (evt) => openTab("stat", evt.currentTarget));
+  btnMain.addEventListener("click", (evt) => openTab("chart", evt.currentTarget));
+  btnComp.addEventListener("click", (evt) => openTab("comp", evt.currentTarget));
   btnAbout.addEventListener("click", (evt) => openTab("About", evt.currentTarget));
 
-  openTab("main", btnMain);
+  openTab("chart", btnMain);
 });
 
 // Fetch individual stats data

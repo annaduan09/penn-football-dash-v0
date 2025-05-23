@@ -16,7 +16,7 @@ export function openTab(tabName, tabEl) {
     tabEl.style.backgroundColor = "#a01414";
     tabEl.style.color = "white";
 
-    if (tabName === "main") {
+    if (tabName === "chart") {
         const mainEvent = new CustomEvent("mainTabActivated");
         window.dispatchEvent(mainEvent);
       }
