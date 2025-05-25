@@ -34,7 +34,7 @@ const events = new EventTarget();
 
 // Set up references to DOM elements
 const statListEl = document.querySelector('#stat-entry');
-const positionDropdownEl = document.querySelector('#Add');
+const positionDropdownEl = document.querySelector('#stat');
 
 // Extract positions and stat names
 const positions = Object.keys(indivStats);

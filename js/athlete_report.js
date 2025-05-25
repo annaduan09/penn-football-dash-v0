@@ -109,14 +109,20 @@ function populateComparePage(athleteData, num) {
     const statName = element.id.replace(prefix, '');
 
     if (athleteData[statName] !== undefined) {
-      element.textContent = athleteData[statName] !== null ? athleteData[statName] : '';
+      if (statName == "Weight") {
+        element.textContent = athleteData["Weight"]|| '';
+      } else if (statName == "Height") {
+        element.textContent = athleteData["Height"]|| '';
+      } else {
+      element.textContent = athleteData[statName] > 0 ? athleteData[statName] : '';
     }
+  }
   });
 
 // Get TSA
-let squat1 = Number(document.getElementById('athlete-1-Squat').textContent);
+let squat1 = Number(document.getElementById('athlete-1-Squat').textContent); // in title case to be compatible with keys in latest_tests_2020_2024.json
 let bench1 = Number(document.getElementById('athlete-1-Bench').textContent);
-let weight1 = Number(document.getElementById('athlete-1-weight').textContent);
+let weight1 = Number(document.getElementById('athlete-1-Weight').textContent);
 
 let squat2 = Number(document.getElementById('athlete-2-Squat').textContent);
 let bench2 = Number(document.getElementById('athlete-2-Bench').textContent);
@@ -125,8 +131,8 @@ let weight2 = Number(document.getElementById('athlete-2-Weight').textContent);
 let TSA1 = weight1 ? ((squat1 + bench1) / (weight1 * 2)).toFixed(2) : '';
 let TSA2 = weight2 ? ((squat2 + bench2) / (weight2 * 2)).toFixed(2) : '';
 
-document.getElementById('athlete-1-TSA').textContent = "TSA: " + TSA1 || '';
-document.getElementById('athlete-2-TSA').textContent = "TSA: " + TSA2 || '';
+document.getElementById('athlete-1-tsa').textContent = "TSA: " + TSA1 || '';
+document.getElementById('athlete-2-tsa').textContent = "TSA: " + TSA2 || '';
 }
 
 function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) {
