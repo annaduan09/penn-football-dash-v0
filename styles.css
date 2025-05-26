@@ -119,7 +119,6 @@ body {
 #banner-main-primary, #banner-stats-primary {
   display: flex;
   flex-direction: row;
-  align-items: top;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -447,8 +446,22 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 
 
 /* Compare Athletes page  */
+
+
 #comp-table {
-  width: 100%;
+  width: 80vw;
+  table-layout: fixed;
+}
+
+/* Label column */
+#comp-table th {
+  width: 10vw; 
+}
+
+/* Athlete 1 and Athlete 2 columns */
+#comp-table td:nth-child(2),
+#comp-table td:nth-child(3) {
+  width: 20vw; 
 }
 
 .comp-tertiary-wrapper {
@@ -457,7 +470,15 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
   font-size: 1rem;
   font-weight: 100;
   font-style: italic;
-  gap: 1rem;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.comp-tertiary-wrapper > div {
+  width: 10vw;
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
 }
 
 
@@ -469,6 +490,7 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
   padding: 0.8rem 1rem;
   border-radius: 1rem 0 0 1rem;
   color: #2c2c2e;
+  text-align: center;
 }
 
 /* Stat row data cells */
@@ -488,13 +510,6 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 .comp-stat:hover, .comp-stat-row:nth-child(even) .comp-stat:hover{
   background-color: #dff0ff;
 }
-
-/* Subtle drop shadow on table */
-#comp-table {
-  border-radius: 1.5rem;
-  overflow: hidden;
-}
-
 
 /* About page */
 #About-text {
@@ -594,7 +609,7 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
 
   .chart-grid>div {
     background-color: white;
-    max-width: 100;
+    max-width: 100%;
     height: 30vh;
   }
 
