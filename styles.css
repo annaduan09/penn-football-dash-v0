@@ -271,7 +271,7 @@ body {
   font-weight: bolder;
 }
 
-#headshot-div-add {
+#headshot-div-add, #headshot-div-comp-1, #headshot-div-comp-2 {
   height: 16vw;
   width: 12vw;
 }
@@ -398,14 +398,14 @@ rect.bb-event-rect {
   font-family: Poppins, sans-serif;
   font-weight: 600;
   margin-top: 1em;
-  fill: #1f1f1f;
+  fill: #15182d;
   text-transform: uppercase;
 }
 
 
-.bb tspan {
+.bb tspan, .bb-levels > text:nth-child(2), g.bb-legend-item:nth-child(1) > text:nth-child(1), g.bb-legend-item:nth-child(2) > text:nth-child(1) {
   font-family: Lato, sans-serif;
-  fill: #011f5b;
+  fill: #15182d;
   font-weight: 500;
   font-size: 0.75rem;
 }
@@ -444,14 +444,17 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 }
 
 
-
 /* Compare Athletes page  */
-
-
 #comp-table {
-  width: 80vw;
+  width: 90vw;
   table-layout: fixed;
 }
+
+.comp-header-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+} 
 
 /* Label column */
 #comp-table th {
@@ -461,7 +464,7 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 /* Athlete 1 and Athlete 2 columns */
 #comp-table td:nth-child(2),
 #comp-table td:nth-child(3) {
-  width: 20vw; 
+  width: 30vw; 
 }
 
 .comp-tertiary-wrapper {
@@ -471,16 +474,16 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
   font-weight: 100;
   font-style: italic;
   gap: 0.5rem;
+  justify-content: space-between;
   padding-bottom: 0.5rem;
 }
 
 .comp-tertiary-wrapper > div {
-  width: 10vw;
+  width: 8vw;
   display: flex;
   flex-direction: row;
   gap: 0.3rem;
 }
-
 
 /* Stat row labels */
 .comp-stat-row th {
@@ -495,10 +498,24 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 
 /* Stat row data cells */
 .comp-stat {
-  padding: 0.8rem 1rem;
   transition: background 0.2s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  text-align: center;
+}
+
+.comp-stat-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center; 
+}
+
+.comp-stat-value {
+  margin: 0;
+}
+.comp-stat-check {
+  display: none;
+  font-size: x-large;
 }
 
 /* Alternating background */
@@ -513,7 +530,7 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 
 /* About page */
 #About-text {
-  padding-right: 60vw;
+  width: 60vw;
 }
 
 

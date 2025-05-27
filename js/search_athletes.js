@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (inputEl && dropdownEl) {
       inputEl.addEventListener("keyup", () => {
-        console.log(pageName);
         filterFunction(inputEl, dropdownEl);
       });
     }

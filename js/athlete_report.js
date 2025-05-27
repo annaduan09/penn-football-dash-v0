@@ -90,6 +90,52 @@ function updateHeadshot(name, imgElement) {
   imgElement.src = imagePath;
 }
 
+function updateCompChecks() {
+  const inverseStats = [ // better when lower
+    'Flying 10', '10Y Sprint', '60Y Shuttle', 'L Drill', 'Pro Agility',
+  ];
+  const prefix = `athlete-1-`;
+
+  document.querySelectorAll(`[id^="${prefix}"]`).forEach((element) => {
+    const item = element.id.replace(prefix, '');
+    const statName = item.replace("-check", '');
+
+    const value1_id = `athlete-1-${statName}`;
+    const value2_id = `athlete-2-${statName}`;
+
+    const value1 = document.getElementById(value1_id);
+    const value2 = document.getElementById(value2_id);
+
+    const val1 = parseFloat(value1?.textContent);
+    const val2 = parseFloat(value2?.textContent);
+
+    console.log(`Stat: ${statName}, Athlete 1: ${val1}, Athlete 2: ${val2}`);
+
+    // Hide both checkmarks first
+    const check1 = document.getElementById(`athlete-1-${statName}-check`);
+    const check2 = document.getElementById(`athlete-2-${statName}-check`);
+    if (check1) check1.style.display = "none";
+    if (check2) check2.style.display = "none";
+
+    if (isNaN(val1) || isNaN(val2) || val1 <= 0 || val2 <= 0 || val2 == val1) return;
+
+    let better_num;
+    if (inverseStats.includes(statName)) {
+      better_num = val1 < val2 ? 1 : 2;
+    } else {
+      better_num = val1 > val2 ? 1 : 2;
+    }
+
+    const check_id = `athlete-${better_num}-${statName}-check`;
+    const checkElement = document.getElementById(check_id);
+    if (checkElement) {
+      checkElement.style.display = "block";
+    }
+  });
+}
+
+
+
 
 // comp page
 function populateComparePage(athleteData, num) {
@@ -98,8 +144,6 @@ function populateComparePage(athleteData, num) {
   document.getElementById('athlete-' + num + '-name').textContent = athleteData.Name || '';         // Displays
   document.getElementById('athlete-' + num + '-position').textContent = athleteData.Position || '';
   document.getElementById('athlete-' + num + '-year').textContent = athleteData.Status || '';
-
-
 
 
   // Populate stat fields
@@ -165,12 +209,19 @@ function setupAthleteSelectionListener(listEl, dropdownEl, dropdownContainerEl) 
         updateHeadshot(athleteData.Name, document.getElementById("headshot-add"));
         
       } else if (dropdownEl == "dropdown-add") {
+        populateChartPage(athleteData);
         populateEntryPage(athleteData);
+        updateHeadshot(athleteData.Name, document.getElementById("headshot-main"));
         updateHeadshot(athleteData.Name, document.getElementById("headshot-add"));
+
       } else if (dropdownEl == "dropdown-comp-1") {
         populateComparePage(athleteData, 1);
+        updateHeadshot(athleteData.Name, document.getElementById("headshot-comp-1"));
+        updateCompChecks()
       } else {
         populateComparePage(athleteData, 2);
+        updateHeadshot(athleteData.Name, document.getElementById("headshot-comp-2"));
+        updateCompChecks()
       }
 
       dropdown.classList.add('hidden');

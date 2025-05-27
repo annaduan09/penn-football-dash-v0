@@ -158,94 +158,92 @@
         <div id="comp" class="tabcontent">
 
             <table id="comp-table" class="comp-table">
-                <tr class="comp-primary-row">
-                    <th class="comp-label-header"></th>
-                    <td>
-                        <h1 class="name" id="athlete-1-name">
-                        Athlete 1
-                        </h1>
-                    </td>
-
-                    <td>
-                        <h1 class="name" id="athlete-2-name">
-                        Athlete 2
-                        </h1>
-                    </td>
-                </tr>
-
-                    
-                <tr class="comp-secondary-row">
-                    <th class="comp-secondary-header"></th>
-                    <td>
-                        <div class="comp-secondary-wrapper">
-                            <p id="athlete-1-position">Position</p>
-                            <p id="athlete-1-year">Year</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="comp-secondary-wrapper">
-                            <p id="athlete-2-position">Position</p>
-                            <p id="athlete-2-year">Year</p>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr class="comp-tertiary-row">
-                    <th class="comp-tertiary-header"></th>
-                    <td>
-                        <div class="comp-tertiary-wrapper">
-                            <div class="comp-tertiary-weight">
-                                <p class="comp-tertiary">Weight:</p>
-                                <p class="comp-tertiary" id="athlete-1-Weight"></p>
+                <tr class="comp-header-row">
+                    <th></th>
+                    <td id="comp-header-1" class="comp-header">
+                        <div id="comp-header-1-wrapper" class="comp-header-wrapper">
+                            <div id="comp-header-1-left">
+                                <div id="headshot-div-comp-1" class="headshot-div">
+                                    <img src="www/headshots/empty.png" alt="Athlete headshot" id="headshot-comp-1" class="headshot">
+                                </div>
                             </div>
-                            <div class="comp-tertiary-height">
-                                <p class="comp-tertiary">Height:</p>
-                                <p class="comp-tertiary" id="athlete-1-Height"></p>
-                            </div>
-                            <div class="comp-tertiary-tsa">
-                                <p id="athlete-1-tsa">TSA:</p>
+                            <div id="comp-header-1-right">
+                                <h1 class="name" id="athlete-1-name">
+                                Athlete 1
+                                </h1>
+
+                                <div class="comp-secondary-wrapper">
+                                    <p id="athlete-1-position">Position</p>
+                                    <p id="athlete-1-year">Year</p>
+                                </div>
+
+                                <div class="comp-tertiary-wrapper">
+                                    <div class="comp-tertiary-weight">
+                                        <p class="comp-tertiary">Weight:</p>
+                                        <p class="comp-tertiary" id="athlete-1-Weight"></p>
+                                    </div>
+                                    <div class="comp-tertiary-height">
+                                        <p class="comp-tertiary">Height:</p>
+                                        <p class="comp-tertiary" id="athlete-1-Height"></p>
+                                    </div>
+                                    <div class="comp-tertiary-tsa">
+                                        <p id="athlete-1-tsa">TSA:</p>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown" id="dropdown-container-comp-1">
+                                    <button class="dropbtn" id="load-athletes-main-comp-1">
+                                        Pick Athlete 1
+                                    </button>
+                                    <div id="dropdown-comp-1" class="dropdown-content">
+                                        <input type="text" placeholder="Search.." id="name-search-comp-1">
+                                        <ul id="athlete-list-comp-1"></ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </td>
-                    <td>
-                        <div class="comp-tertiary-wrapper">
-                            <div class="comp-tertiary-weight">
-                                <p class="comp-tertiary">Weight:</p>
-                                <p class="comp-tertiary" id="athlete-2-Weight">  </p>
-                            </div>
-                            <div class="comp-tertiary-height">
-                                <p class="comp-tertiary">Height:</p>
-                                <p class="comp-tertiary" id="athlete-2-Height">  </p>
-                            </div>
-                            <div class="comp-tertiary-tsa">
-                                <p id="athlete-2-tsa">TSA:</p>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
 
-
-                <tr class="comp-button-row">
-                    <td class="comp-label-cell"></td>
-                    <td>
-                        <div class="dropdown" id="dropdown-container-comp-1">
-                            <button class="dropbtn" id="load-athletes-main-comp-1">
-                                Pick Athlete 1
-                            </button>
-                            <div id="dropdown-comp-1" class="dropdown-content">
-                                <input type="text" placeholder="Search.." id="name-search-comp-1">
-                                <ul id="athlete-list-comp-1"></ul>
+                    <td id="comp-header-2" class="comp-header">
+                        <div id="comp-header-2-wrapper" class="comp-header-wrapper">
+                            <div id="comp-header-2-left">
+                                <div id="headshot-div-comp-2" class="headshot-div">
+                                    <img src="www/headshots/empty.png" alt="Athlete headshot" id="headshot-comp-2" class="headshot">
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="dropdown" id="dropdown-container-comp-2">
-                            <button class="dropbtn" id="load-athletes-main-comp-2">
-                                Pick Athlete 2
-                            </button>
-                            <div id="dropdown-comp-2" class="dropdown-content">
-                                <input type="text" placeholder="Search.." id="name-search-comp-2">
-                                <ul id="athlete-list-comp-2"></ul>
+                            <div id="comp-header-2-right">
+                                <h1 class="name" id="athlete-2-name">
+                                Athlete 2
+                                </h1>
+
+                                <div class="comp-secondary-wrapper">
+                                    <p id="athlete-2-position">Position</p>
+                                    <p id="athlete-2-year">Year</p>
+                                </div>
+
+                                <div class="comp-tertiary-wrapper">
+                                    <div class="comp-tertiary-weight">
+                                        <p class="comp-tertiary">Weight:</p>
+                                        <p class="comp-tertiary" id="athlete-2-Weight">  </p>
+                                    </div>
+                                    <div class="comp-tertiary-height">
+                                        <p class="comp-tertiary">Height:</p>
+                                        <p class="comp-tertiary" id="athlete-2-Height">  </p>
+                                    </div>
+                                    <div class="comp-tertiary-tsa">
+                                        <p id="athlete-2-tsa">TSA:</p>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown" id="dropdown-container-comp-2">
+                                    <button class="dropbtn" id="load-athletes-main-comp-2">
+                                        Pick Athlete 2
+                                    </button>
+                                    <div id="dropdown-comp-2" class="dropdown-content">
+                                        <input type="text" placeholder="Search.." id="name-search-comp-2">
+                                        <ul id="athlete-list-comp-2"></ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </td>
@@ -253,64 +251,184 @@
 
                 <tr class="comp-stat-row">
                     <th>Squat</th>
-                    <td class="comp-stat" id="athlete-1-Squat"></td>
-                    <td class="comp-stat" id="athlete-2-Squat"></td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Squat" class="comp-stat-value"></p>
+                            <p id="athlete-1-Squat-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Squat" class="comp-stat-value"></p>
+                            <p id="athlete-2-Squat-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Bench</th>
-                    <td class="comp-stat" id="athlete-1-Bench"></td>
-                    <td class="comp-stat" id="athlete-2-Bench"></td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Bench" class="comp-stat-value"></p>
+                            <p id="athlete-1-Bench-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Bench" class="comp-stat-value"></p>
+                            <p id="athlete-2-Bench-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
-                    <th>225-lb Bench</th>
-                    <td class="comp-stat" id="athlete-1-225lb Bench"></td>
-                    <td class="comp-stat" id="athlete-2-225lb Bench"></td>
+                    <th>225lb Bench</th>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-225lb Bench" class="comp-stat-value"></p>
+                            <p id="athlete-1-225lb Bench-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-225lb Bench" class="comp-stat-value"></p>
+                            <p id="athlete-2-225lb Bench-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
-                    <th>10-Yard Sprint</th>
-                    <td class="comp-stat" id="athlete-1-10Y Sprint"></td>
-                    <td class="comp-stat" id="athlete-2-10Y Sprint"></td>
+                    <th>10Y Sprint</th>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-10Y Sprint" class="comp-stat-value"></p>
+                            <p id="athlete-1-10Y Sprint-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-10Y Sprint" class="comp-stat-value"></p>
+                            <p id="athlete-2-10Y Sprint-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Flying 10</th>
-                    <td class="comp-stat" id="athlete-1-Flying 10"></td>
-                    <td class="comp-stat" id="athlete-2-Flying 10"></td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Flying 10" class="comp-stat-value"></p>
+                            <p id="athlete-1-Flying 10-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Flying 10" class="comp-stat-value"></p>
+                            <p id="athlete-2-Flying 10-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Pro Agility</th>
-                    <td class="comp-stat" id="athlete-1-Pro Agility"></td>
-                    <td class="comp-stat" id="athlete-2-Pro Agility"></td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Pro Agility" class="comp-stat-value"></p>
+                            <p id="athlete-1-Pro Agility-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Pro Agility" class="comp-stat-value"></p>
+                            <p id="athlete-2-Pro Agility-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
-                    <th>L-drill</th>
-                    <td class="comp-stat" id="athlete-1-L Drill"></td>
-                    <td class="comp-stat" id="athlete-2-L Drill"></td>
+                    <th>L Drill</th>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-L Drill" class="comp-stat-value"></p>
+                            <p id="athlete-1-L Drill-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-L Drill" class="comp-stat-value"></p>
+                            <p id="athlete-2-L Drill-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
-                    <th>60-Yard Shuttle</th>
-                    <td class="comp-stat" id="athlete-1-60Y Shuttle"></td>
-                    <td class="comp-stat" id="athlete-2-60Y Shuttle"></td>
+                    <th>60Y Shuttle</th>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-60Y Shuttle" class="comp-stat-value"></p>
+                            <p id="athlete-1-60Y Shuttle-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-60Y Shuttle" class="comp-stat-value"></p>
+                            <p id="athlete-2-60Y Shuttle-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Vertical Jump</th>
-                    <td class="comp-stat" id="athlete-1-Vertical Jump"></td>
-                    <td class="comp-stat" id="athlete-2-Vertical Jump"></td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Vertical Jump" class="comp-stat-value"></p>
+                            <p id="athlete-1-Vertical Jump-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Vertical Jump" class="comp-stat-value"></p>
+                            <p id="athlete-2-Vertical Jump-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Broad Jump</th>
-                    <td class="comp-stat" id="athlete-1-Broad Jump"></td>
-                    <td class="comp-stat" id="athlete-2-Broad Jump"></td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Broad Jump" class="comp-stat-value"></p>
+                            <p id="athlete-1-Broad Jump-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Broad Jump" class="comp-stat-value"></p>
+                            <p id="athlete-2-Broad Jump-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Hang Clean</th>
-                    <td class="comp-stat" id="athlete-1-Hang Clean"></td>
-                    <td class="comp-stat" id="athlete-2-Hang Clean"></td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Hang Clean" class="comp-stat-value"></p>
+                            <p id="athlete-1-Hang Clean-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Hang Clean" class="comp-stat-value"></p>
+                            <p id="athlete-2-Hang Clean-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="comp-stat-row">
                     <th>Power Clean</th>
-                    <td class="comp-stat" id="athlete-1-Power Clean"></td>
-                    <td class="comp-stat" id="athlete-2-Power Clean"></td>
-                </tr>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-1-Power Clean" class="comp-stat-value"></p>
+                            <p id="athlete-1-Power Clean-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                    <td class="comp-stat">
+                        <div class="comp-stat-wrapper">
+                            <p id="athlete-2-Power Clean" class="comp-stat-value"></p>
+                            <p id="athlete-2-Power Clean-check" class="comp-stat-check">✅</p>
+                        </div>
+                    </td>
+                </tr>                
             </table>
         </div>
 
