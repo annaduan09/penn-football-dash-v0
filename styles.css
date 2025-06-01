@@ -304,6 +304,12 @@ h1 {
   gap: 1rem;
 }
 
+#stats-instructions > div {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border-left: 0.5rem solid #a01414;
+}
+
 fieldset {
   border-color: transparent;
 }
