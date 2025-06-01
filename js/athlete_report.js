@@ -98,7 +98,7 @@ function updateHeadshot(name, imgElement) {
   
   // Set the error handler BEFORE setting the src
   imgElement.onerror = () => {
-      imgElement.src = "www/headshots/empty.jpg";
+      imgElement.src = "www/headshots/empty.png";
   };
   
   imgElement.src = imagePath;

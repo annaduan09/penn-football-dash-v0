@@ -436,49 +436,59 @@
         <!-- About -->
         <div id="About" class="tabcontent">
             <div id="About-text">
-                <h3>About this project</h3>
+                <div id="About-intro" class="About-section">
+                <h1>About this project</h1>  
                 <p>
-                    This tool helps visualize an athlete's physical attributes and off-field performance. Each athlete
-                    is benchmarked against five years of data from others in their position group. The charts provide a
-                    clear snapshot of how an athlete's test scores compare to his peers. This project was completed for
-                    MUSA-6110 (Urban Spatial Analytics Practicum) in Spring 2025.
+                    This interactive dashboard visualizes an athlete's physical attributes and off-season testing performance. 
+                    Each athlete is benchmarked against six years of data from athletes in his position group. The dashboard provides
+                    multiple views of how an athlete compare to his peers in standardized testing. 
                 </p>
-
-                <br>
-
-                <h3>Adding or updating athlete data: Add Athletes</h3>
                 <p>
-                    The “Add Athletes” page lets you update existing athlete profiles or add new ones. Use the “Saved
-                    Athletes” button to find and edit current records. To add a new athlete, fill out the form with a
-                    Name-Position combination that doesn't already exist in the system.
+                    This project was developed for Penn Strength and Conditioning and Penn Football in fulfilment of the Master of 
+                    Urban Spatial Analytics Practicum (MUSA-6110) in Spring 2025.
                 </p>
+                </div>
+                <div id="About-usage" class="About-section">
+                <h1>Using this dashboard</h1>
+                    <div id="About-cards">
+                        <div id="About-usage-card-1" class="About-usage-card">
+                            <h3>1 / Modify data</h3>
+                            <p>
+                                Use the <strong>Add Data</strong> to add and update athlete profiles. Use the <strong>Saved Athletes</strong> 
+                                button to load existing athlete profiles. You can change an athlete's demographics (name, number, position, year)
+                                and his testing stats. If you save a new <em>name-position</em> combination, a new athlete profile will be added to the database.
+                            </p>
+                        </div>
+                        <div id="About-usage-card-3" class="About-usage-card">
+                            <h3>2 / Visualize data</h3>
+                            <p>
+                                On the <strong>Athlete Report</strong> tab, you can view an athlete's testing numbers and benchmark
+                                him against his position group. Barcharts visualize an athlete's percentile within his position, 
+                                and are annotated with his testing stats. The radar chart summarizes an athlete's 
+                                attributes relative to his position group. Hover over charts to see more details.
+                            </p>
+                        </div>
+                        <div id="About-usage-card-3" class="About-usage-card">
+                            <h3>3 / Compare athletes</h3>
+                            <p>
+                                Use the <strong>Compare Athletes</strong> tab to compare two athletes side-by-side. Use the dropdown buttons to 
+                                select who you'd like to compare. All available stats will be displayed in the table below. For tests that are 
+                                populated for both athletes, a green check will indicate the superior athlete for each test.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                <br>
-
-                <h3>Viewing athlete profiles: Athlete Report</h3>
-                <p>
-                    Use the “Saved Athletes” button to view detailed reports for individual athletes. Charts show where
-                    an athlete ranks—by percentile—on each stat compared to their position group. For example, an 80th
-                    percentile score means they performed better than 80% of their peers. The number above each bar
-                    shows the raw score. Hover over a bar to see the group median and percentile.
-                </p>
-
-                <br>
-
-                <h3>Comparing two athletes</h3>
-                <p>
-                    The “Compare Athletes” page lets you view two athletes side-by-side, showing their raw testing
-                    results and measurements. Use the dropdowns to select who you'd like to compare.
-                </p>
-
-                <br>
-
-                <p><em>Penn Football Testing Dashboard</em></p>
-                <p><em>Last updated: May 20, 2025</em></p>
+                <div id="About-footer" class="About-section">
+                <p>Penn Football Testing Dashboard</p>
+                <p>Maintainer: <a href="https://github.com/annaduan09"
+                    target="_blank">Anna Duan</a></p>
+                <p>Last updated: June 1, 2025</p>
                 <p>
                     View the code on <a href="https://github.com/annaduan09/penn-football-testing-dashboard"
                         target="_blank">GitHub</a>.
                 </p>
+                </div>
             </div>
         </div>
     </div>

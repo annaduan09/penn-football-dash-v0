@@ -24,6 +24,10 @@ body {
     'main main main main main main';
 }
 
+h1 {
+  color: #a01414;
+}
+
 .header {
   padding: 1.5vw;
   grid-area: header;
@@ -82,6 +86,7 @@ body {
 }
 
 .name {
+  color: #a01414;
   text-transform: capitalize;
   font-weight: bolder;
   width: auto !important;
@@ -532,11 +537,40 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 }
 
 /* About page */
-
 #About-text {
-  width: 40vw;
   margin: 0 auto;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
+.About-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#About-cards {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.About-usage-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 33%;
+  background-color: rgb(160, 20, 20, 0.1);
+}
+
+.About-usage-card > h3 {
+  color: rgb(131, 16, 16);
+}
+
 
 /* Billboard.js Tooltip Styling */
 .bb-tooltip {
@@ -597,42 +631,41 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
 }
 
 
-
-/* Smaller screen media queries */
+/* Media queries */
 @media only screen and (max-width: 900px) {
-  .chart-grid {
-    display: grid;
+  #main-right {
     grid-template-columns: 1fr 1fr;
-    gap: 1vw;
   }
 
-  .chart-grid>div {
-    background-color: white;
-    max-width: 100%;
-    height: 30vh;
+  #main-right > div {
+    max-width: 30vw;
+    height: 35vh;
   }
-}
+
+  .bb svg,
+  rect.bb-event-rect {
+    width: 30vw !important;
+    height: 30vh !important;
+  }
+  }
+
 
 @media only screen and (max-width: 600px) {
-  .chart-area {
+  #main-right {
+    display: flex;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  #main-right {
     display: flex;
     flex-direction: column;
   }
 
-  .chart-area>p {
-    padding: 0;
-    padding-top: 0.5rem;
-  }
-
-  .chart-grid {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .chart-grid>div {
-    background-color: white;
-    max-width: 100%;
-    height: 30vh;
+  .bb svg,
+  rect.bb-event-rect {
+    width: 40vw !important;
+    height: 30vh !important;
   }
 
   ul#stats-list {
@@ -670,9 +703,9 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
     flex-direction: row;
     justify-content: flex-start;
   }
+  }
 
 
-}
 
 
 
