@@ -77,6 +77,7 @@ function populateChartPage(athleteData) {
 
 }
 
+
 function updateHeadshot(name, imgElement) {
   if (!name || !imgElement) return;
   
@@ -87,7 +88,7 @@ function updateHeadshot(name, imgElement) {
   const suffixMatch = name.match(suffixPattern);
   
   if (suffixMatch) {
-      const suffix = suffixMatch[1].replace(/\./g, ''); 
+      const suffix = suffixMatch[1].replace(/\./g, '');
       const nameWithoutSuffix = name.replace(suffixPattern, '');
       processedName = nameWithoutSuffix + '-' + suffix;
   }
@@ -95,10 +96,11 @@ function updateHeadshot(name, imgElement) {
   const fileName = processedName.toLowerCase().replace(/\s+/g, "-") + ".jpg";
   const imagePath = `www/headshots/${fileName}`;
   
+  // Set the error handler BEFORE setting the src
   imgElement.onerror = () => {
       imgElement.src = "www/headshots/empty.jpg";
   };
-
+  
   imgElement.src = imagePath;
 }
 

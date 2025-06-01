@@ -93,8 +93,7 @@ body {
 #main-container {
   grid-area: main;
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 2rem;
+  grid-template-columns: 2fr 5fr;
 }
 
 #main-left {
@@ -261,6 +260,10 @@ body {
   background-color: transparent;
   font-size: 1.6rem;
   font-weight: 200;
+}
+
+#status-input {
+  width: auto !important;
 }
 
 #number-input {
@@ -529,10 +532,11 @@ div#radar-chart .bb-axis-3>text:nth-child(2) {
 }
 
 /* About page */
-#About-text {
-  width: 60vw;
-}
 
+#About-text {
+  width: 40vw;
+  margin: 0 auto;
+}
 
 /* Billboard.js Tooltip Styling */
 .bb-tooltip {
@@ -591,6 +595,7 @@ div#radar-chart .bb-axis-3 > text:nth-child(2) {
   align-self: center;
   justify-self: center;
 }
+
 
 
 /* Smaller screen media queries */
