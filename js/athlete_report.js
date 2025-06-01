@@ -79,16 +79,29 @@ function populateChartPage(athleteData) {
 
 function updateHeadshot(name, imgElement) {
   if (!name || !imgElement) return;
-
-  const fileName = name.toLowerCase().replace(/\s+/g, "-") + ".jpg";
+  
+  let processedName = name;
+  
+  // Check if name contains suffix
+  const suffixPattern = /,\s*(jr\.?|sr\.?|ii|iii|iv|v|vi)$/i;
+  const suffixMatch = name.match(suffixPattern);
+  
+  if (suffixMatch) {
+      const suffix = suffixMatch[1].replace(/\./g, ''); 
+      const nameWithoutSuffix = name.replace(suffixPattern, '');
+      processedName = nameWithoutSuffix + '-' + suffix;
+  }
+  
+  const fileName = processedName.toLowerCase().replace(/\s+/g, "-") + ".jpg";
   const imagePath = `www/headshots/${fileName}`;
-
+  
   imgElement.onerror = () => {
-    imgElement.src = "www/headshots/empty.jpg";
+      imgElement.src = "www/headshots/empty.jpg";
   };
 
   imgElement.src = imagePath;
 }
+
 
 function updateCompChecks() {
   const inverseStats = [ // better when lower
@@ -109,7 +122,6 @@ function updateCompChecks() {
     const val1 = parseFloat(value1?.textContent);
     const val2 = parseFloat(value2?.textContent);
 
-    console.log(`Stat: ${statName}, Athlete 1: ${val1}, Athlete 2: ${val2}`);
 
     // Hide both checkmarks first
     const check1 = document.getElementById(`athlete-1-${statName}-check`);

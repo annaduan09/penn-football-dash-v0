@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Fetch individual stats data
-const indivStatsResponse = await fetch('data/stats_2020_2024.json');
+const indivStatsResponse = await fetch('data/stats_20_25.json');
 const indivStats = await indivStatsResponse.json();
 
 // Event target for custom events
@@ -117,7 +117,7 @@ document.getElementById('save-athlete').addEventListener('click', () => {
 
 
 // Bulk stat upload
-/* const finalStatsResponse = await fetch('data/latest_tests_2020_2024.json');
+/* const finalStatsResponse = await fetch('data/latest_tests_20_25.json');
 const finalStats = await finalStatsResponse.json();
 
 finalStats.Name.forEach((Name, index) => {
