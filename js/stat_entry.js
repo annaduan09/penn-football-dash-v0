@@ -123,7 +123,7 @@ function initStatEntry(statListEl, positionDropdownEl, stats, positions, events)
               ${stat}
           </label>
             <div class="input-wrapper">
-              <input type="number" id="stat-entry-${stat}" name="${stat}" max="700" step="any">
+              <input type="number" id="stat-entry-${stat}" name="${stat}" max="1000" step="any">
               <span class="unit">${unit}</span>
             </div>`;
         statListItems[stat] = item;
